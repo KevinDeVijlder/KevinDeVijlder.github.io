@@ -1,3 +1,11 @@
-p {
-    font-size: 30px;
+/* hexagon image */
+.hexagonimage {
+max-width: 100px;
+}
+
+/* body width container */
+body { 
+	max-width: 750px; 
+	margin: 0 auto !important; 
+	float: none !important; 
 }
