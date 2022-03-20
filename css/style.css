@@ -50,6 +50,7 @@ main {
 .topnava:hover {
   color: gray;
   border-bottom: 2px solid gray;
+  transition: 1s ease-in-out;
 }
 
 /* Hexagon hover */
@@ -125,7 +126,30 @@ h1 {
   margin-bottom: 70px;
 }
 
+.aboutmetext{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+}
+
 /* Footer */
-.footer {
-  background-color: blue;
+
+.footerline{
+  margin-top: 70px;
+  margin-bottom: 1rem;
+}
+
+footer {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  color: grey;
+  padding-bottom: 1rem;
+}
+
+.copyrighttext{
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  color: grey;
 }

@@ -83,7 +83,7 @@
         />
 
         <h1>About me</h1>
-        <p class="welcometext">
+        <p class="aboutmetext">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lorem
           felis, varius sed felis hendrerit, placerat faucibus risus. Orci
           varius natoque penatibus et magnis dis parturient montes, nascetur
@@ -132,8 +132,27 @@
       </main>
 
       <footer>
-        <p>Author: Hege Refsnes</p>
-        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+        <hr
+          class="footerline"
+          style="
+            height: 5px;
+            border-width: 0;
+            color: #b5e2ff;
+            background-color: #b5e2ff;
+          "
+        />
+        <p>Author: Owly</p>
+        <div class="copyrighttext">
+          Copyright &copy;
+          <span id="copyright">
+            <script>
+              document
+                .getElementById("copyright")
+                .appendChild(document.createTextNode(new Date().getFullYear()));
+            </script>
+          </span>
+          Owly. All Rights Reserved
+        </div>
       </footer>
     </div>
   </body>
