@@ -127,6 +127,15 @@ h1 {
   margin-bottom: 1rem;
 }
 
+h2{
+  font-size: 22.5px;
+  font-weight: bold;
+  color: #b5e2ff;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  margin-bottom: 1rem;
+}
+
 p {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -148,6 +157,17 @@ p {
   font-size: 20px;
   color: grey;
   font-family: "Inconsolata", monospace;
+}
+
+/* News page */
+.newstext{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+}
+
+.newsarticle{
+  margin-bottom: 2.5rem;
 }
 
 /* Contact form */
