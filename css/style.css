@@ -104,6 +104,16 @@ main {
   float: right;
 }
 
+.activepage{
+  color: #b5e2ff;
+}
+
+.activepage:hover{
+  color: #b5e2ff;
+  border-bottom: 2px solid #b5e2ff;
+  transition: 1s ease-in-out;
+}
+
 /* Link style */
 .linkstyle {
   color: #b5e2ff;
