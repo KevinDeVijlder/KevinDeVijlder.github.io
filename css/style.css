@@ -1,68 +1,94 @@
 /* hexagon image */
 .hexagonimage {
-max-width: 125px;
+  max-width: 125px;
 }
 
 /* body width auto max width */
-body { 
-	max-width: 750px; 
-	margin: 0 auto !important; 
-	float: none !important; 
+body {
+  max-width: 750px;
+  margin: 0 auto !important;
+  float: none !important;
 }
 
-h1{
-    font-size: 30px;
-    font-weight: bold;
-    color: #B5E2FF;
+.customcontainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-p{
-    font-size: 1.5rem;
+main {
+  flex: 1;
 }
 
 /* Navbar */
 .topnav {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnava {
-    float: left;
-    color: gray;
-    text-align: center;
-    padding-top: 135px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 16px;
-    text-decoration: none;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Inconsolata', monospace;
-  }
-  
-  .topnav a {
-    border-bottom: 2px solid white;
-  }
+  margin-top: 50px;
+  margin-bottom: 75px;
+  position: relative;
+  overflow: hidden;
+}
 
-  .topnav a:hover {
-    color: gray;
-    border-bottom: 2px solid gray;
-  }
-  
-  /* Centered section inside the top navigation */
-  .topnav-centered {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Right-aligned section inside the top navigation */
-  .topnav-right {
-    float: right;
-  }
-  
+/* Style the links inside the navigation bar */
+.topnava {
+  float: left;
+  color: gray;
+  text-align: center;
+  padding-top: 135px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+}
+
+.topnav a {
+  border-bottom: 2px solid white;
+}
+
+.topnav a:hover {
+  color: gray;
+  border-bottom: 2px solid gray;
+}
+
+/* Centered section inside the top navigation */
+.topnav-centered {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+/* Styling body text */
+h1 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #b5e2ff;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  margin-bottom: 1rem;
+}
+
+.welcometext {
+  font-size: 20px;
+  color: grey;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+}
+
+.line{
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+/* Footer */
+.footer {
+  background-color: blue;
+}
