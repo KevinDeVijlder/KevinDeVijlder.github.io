@@ -34,11 +34,13 @@ p{
     color: gray;
     text-align: center;
     padding-top: 135px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
   }
   
   .topnav a {
