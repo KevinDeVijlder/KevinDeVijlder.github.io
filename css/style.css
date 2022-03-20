@@ -43,13 +43,50 @@ main {
   font-family: "Inconsolata", monospace;
 }
 
-.topnav a {
+.topnava {
   border-bottom: 2px solid white;
 }
 
-.topnav a:hover {
+.topnava:hover {
   color: gray;
   border-bottom: 2px solid gray;
+}
+
+/* Hexagon hover */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.imagecontainer:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: grey;
+  background-color: #b5e2ff;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 33px;
+  padding-bottom: 33px;
 }
 
 /* Centered section inside the top navigation */
@@ -83,7 +120,7 @@ h1 {
   font-family: "Inconsolata", monospace;
 }
 
-.line{
+.line {
   margin-top: 70px;
   margin-bottom: 70px;
 }
