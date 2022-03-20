@@ -55,7 +55,7 @@ main {
 
 /* Hexagon hover */
 
-.overlay {
+.overlayhexagon {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -67,11 +67,11 @@ main {
   transition: 0.5s ease-in-out;
 }
 
-.imagecontainer:hover .overlay {
+.imagecontainer:hover .overlayhexagon {
   opacity: 1;
 }
 
-.text {
+.textinhexagon {
   color: grey;
   background-color: #b5e2ff;
   font-size: 28px;
@@ -104,6 +104,19 @@ main {
   float: right;
 }
 
+/* Link style */
+.linkstyle {
+  color: #b5e2ff;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+}
+
+.linkstyle:hover {
+  color: #67b7ec;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+}
+
 /* Styling body text */
 h1 {
   font-size: 25px;
@@ -112,6 +125,11 @@ h1 {
   font-weight: bold;
   font-family: "Inconsolata", monospace;
   margin-bottom: 1rem;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .welcometext {
@@ -126,7 +144,7 @@ h1 {
   margin-bottom: 70px;
 }
 
-.aboutmetext{
+.aboutmetext {
   font-size: 20px;
   color: grey;
   font-family: "Inconsolata", monospace;
@@ -134,7 +152,7 @@ h1 {
 
 /* Footer */
 
-.footerline{
+.footerline {
   margin-top: 70px;
   margin-bottom: 1rem;
 }
@@ -147,9 +165,13 @@ footer {
   padding-bottom: 1rem;
 }
 
-.copyrighttext{
+.copyrighttext {
   font-size: 15px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
   color: grey;
+}
+
+.footerlink {
+  margin-left: 0.5rem;
 }
