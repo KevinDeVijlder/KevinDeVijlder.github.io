@@ -146,6 +146,15 @@ h2{
   margin-bottom: 1rem;
 }
 
+h3{
+  font-size: 20px;
+  font-weight: bold;
+  color: grey;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  margin-bottom: 1rem;
+}
+
 p {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -191,6 +200,68 @@ p {
   font-size: 20px;
   color: grey;
   font-family: "Inconsolata", monospace;
+}
+
+/* Individual blog text */
+.blogimagecontainer {
+  position: relative;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.blogimagebanner{
+  border-radius: 50px;
+  box-shadow: #b5e2ff 2px 2px 20px;
+}
+
+.blogimagetext {
+  position: absolute;
+  top: 60px;
+  left: 25px;
+  font-size: 50px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+}
+
+.blogtext{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+}
+
+.blogtexthighlight{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.divider {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.blogimage{
+  margin-top: 2.5rem;
+  max-width: 750px;
+  max-height: auto;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.blogimagealt{
+  font-size: 20px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 /* Contact form */

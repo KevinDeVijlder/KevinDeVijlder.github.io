@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/resetcss.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Owly's tree</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+  </head>
+  <body>
+    <div class="customcontainer">
+      <header>
+        <div class="topnav">
+          <!-- Centered link -->
+          <div class="topnav-centered">
+            <div class="imagecontainer">
+              <a href="/index.html" class="hexagonimagehover"
+                ><img
+                  class="hexagonimage"
+                  src="/images/owly_hexagon.png"
+                  alt="Profile picture"
+                />
+                <div class="overlayhexagon">
+                  <div class="textinhexagon">Home</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Left-aligned links (default) -->
+          <a href="/html/news.html" class="topnava">News</a>
+          <a href="/index.html#contact" class="topnava">Contact</a>
+
+          <!-- Right-aligned links -->
+          <div class="topnav-right">
+            <a href="/index.html#about" class="topnava">About</a>
+            <a href="/html/blog.html" class="topnava activepage">Blog</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="blogimagecontainer">
+          <img
+            src="/images/thm_banner.png"
+            alt="Try hack me banner"
+            class="blogimagebanner"
+          />
+          <div class="blogimagetext">Root Me</div>
+        </div>
+        <h1>Root Me Writeup</h1>
+        <p class="blogtext">
+          In this write-up I show how to complete the
+          <a href="https://tryhackme.com/room/rrootme" class="linkstyle"
+            >Root Me</a
+          >
+          room on TryHackMe . It's a beginner CTF challenge, that was a lot of
+          fun! Now lets get hacking! (I will answer all questions of the room
+          and how I found the answer, though out the write-up , except for the
+          flags of course!)
+        </p>
+        <p class="divider">. . .</p>
+
+        <h3>Initial Enumeration</h3>
+        <p class="blogtext">
+          We start with a nmap scan ( I use the -sC -sV flags to find the answer
+          to the questions, be sure to read the man page of nmap to get familiar
+          with these flags!):
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_nmap.png"
+          alt="Nmap scan result"
+          class="blogimage"
+        />
+        <p class="blogimagealt">Nmap scan result</p>
+        <p class="blogtext">
+          In the scan we see that there are 2 ports open. We find out that the
+          apache version is 2.4.29. The service running on port 22 is ssh.
+        </p>
+        <p class="blogtext">
+          Now we get the advice to scan the site running on the web server with
+          gobuster. This tool will find all the directories on the web server. I
+          use the common.txt word list for this task. On parrotsec os ( And if I
+          remember correctly, its in the same place on kali linux) this word
+          list can be found under “/usr/share/wordlists/dirb/common.txt “. The
+          command for gobuster:
+        </p>
+        <p class="blogtexthighlight">
+          gobuster dir -w /usr/share/wordlists/dirb/common.txt -u
+          http://deployed/target vm ip here>
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_gobuster.png"
+          alt="Gobuster result"
+          class="blogimage"
+        />
+        <p class="blogimagealt">Gobuster result</p>
+        <p class="blogtext">This gives us the “/panel/” directory.</p>
+        <p class="divider">. . .</p>
+
+        <h3>Getting a shell</h3>
+        <p class="blogtext">
+          When we visit the /panel/ page, we are greeted with a file upload
+          form. Lets try uploading a file containing a reverse shell script
+          written in php. I use the pentestmonkey one, found at
+          http://pentestmonkey.net/tools/web-shells/php-reverse-shell . Be sure
+          to put in your local thm ip adres and remember the port number you
+          choose.
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_php_reverse.png"
+          alt="Php reverse shell file from pentestmonkey"
+          class="blogimage"
+        />
+        <p class="blogimagealt">Php reverse shell file from pentestmonkey</p>
+        <p class="blogtext">
+          When we first try to upload this file, we get an error message saying
+          we cant upload this type of file.
+        </p>
+        <p class="blogtext">
+          So we are going to trick this form, and change the extension from our
+          file from “.php” to “.php5”. Now we can upload the file!
+        </p>
+        <p class="blogtext">
+          Now we start a netcat listener on the port we specified in our reverse
+          shell file:
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_nc.png"
+          alt="nc -lvnp"
+          class="blogimage"
+        />
+        <p class="blogimagealt">nc -lvnp</p>
+        <p class="blogtext">
+          Then we browse to the /uploads directory on the web server (we found
+          this directory with our gobuster scan!). There we click on the file we
+          just uploaded. Then we switch back to the terminal that had our netcat
+          listener and we see we have a shell!
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_shell.png"
+          alt="shell"
+          class="blogimage"
+        />
+        <p class="blogimagealt">shell</p>
+        <p class="blogtext">
+          After some looking around, I find the user flag in the “/var/www”
+          directory.
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_user_txt.png"
+          alt="user.txt"
+          class="blogimage"
+        />
+        <p class="blogimagealt">user.txt</p>
+        <p class="divider">. . .</p>
+
+        <h3>Root flag</h3>
+        <p class="blogtext">
+          The privilege escalation is a fun one! Since we have no user or
+          password, we will need to find a different way to get our precious
+          root flag. We search for all files with the suid permission. I use the
+          following command:
+        </p>
+        <p class="blogtexthighlight">find / -perm -u=s -type f 2>/dev/null</p>
+        <p class="blogtext">
+          This gives us a list of files with the suid set. The one that we can
+          abuse is /usr/bin/python. We go to
+          <a href="https://gtfobins.github.io/" class="linkstyle">gtfobins</a>
+          and look for python. Great, we find a SUID priv esc! We run:
+        </p>
+        <p class="blogtexthighlight">
+          /usr/bin/python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’
+        </p>
+        <p class="blogtext">
+          This makes us root user on the system. Now we can just read the root
+          flag file and that’s it!
+        </p>
+        <img
+          src="/html/blogarticles/rootme/rootme_rootflag.png"
+          alt="root.txt"
+          class="blogimage"
+        />
+        <p class="blogimagealt">root.txt</p>
+        <p class="blogtext">Hooray!!! We did it!</p>
+        <p class="divider">. . .</p>
+
+        <h3>Outro</h3>
+        <p class="blogtext">
+          I hope you learned something new and enjoyed my write-up!
+        </p>
+        <p class="blogtext">
+          Thank you for creating this room! I really like these types of CTF
+          challenges as they are great for beginners.
+        </p>
+        <p class="blogtext">
+          Find me on TryHackMe:
+          <a href="https://tryhackme.com/p/Owly" class="linkstyle"
+            ><i class="fa-solid fa-id-badge"></i> Owly</a
+          >
+        </p>
+      </main>
+
+      <footer>
+        <hr
+          class="footerline"
+          style="
+            height: 5px;
+            border-width: 0;
+            color: #b5e2ff;
+            background-color: #b5e2ff;
+          "
+        />
+        <p>Author: Owly</p>
+        <p>
+          <i class="fa-brands fa-github-alt"></i>
+          <a
+            href="https://github.com/KevinDeVijlder"
+            class="linkstyle footerlink"
+            >Github</a
+          >
+        </p>
+        <p>
+          <i class="fa-brands fa-twitter"></i>
+          <a
+            href="https://twitter.com/KevinVijlder"
+            class="linkstyle footerlink"
+            >Twitter</a
+          >
+        </p>
+        <p>
+          <i class="fa-brands fa-linkedin"></i>
+          <a
+            href="https://www.linkedin.com/in/kevindevijlder/"
+            class="linkstyle footerlink"
+            >LinkedIn</a
+          >
+        </p>
+        <div class="copyrighttext">
+          Copyright &copy;
+          <span id="copyright">
+            <script>
+              document
+                .getElementById("copyright")
+                .appendChild(document.createTextNode(new Date().getFullYear()));
+            </script>
+          </span>
+          Owly. All Rights Reserved
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
