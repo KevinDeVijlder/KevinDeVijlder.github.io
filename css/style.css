@@ -170,14 +170,27 @@ p {
 }
 
 /* News page */
+
+.newsarticle{
+  margin-bottom: 5rem;
+}
+
 .newstext{
   font-size: 20px;
   color: grey;
   font-family: "Inconsolata", monospace;
 }
 
-.newsarticle{
+/* Blog page */
+
+.bloganouncement{
   margin-bottom: 5rem;
+}
+
+.bloganouncementtext{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
 }
 
 /* Contact form */
