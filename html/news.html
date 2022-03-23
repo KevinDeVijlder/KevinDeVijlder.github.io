@@ -104,6 +104,7 @@
             background-color: #b5e2ff;
           "
         />
+        <p>For the night owls among us: <button onclick="themeToggle()" class="darkmodebutton"><i class="fa-solid fa-moon"></i></button></p>
         <p>Author: Owly</p>
         <p>
           <i class="fa-brands fa-github-alt"></i>
@@ -139,6 +140,37 @@
             </script>
           </span>
           Owly. All Rights Reserved
+          <script>
+             function loadcssfile(filename, filetype) {
+              if (filetype == "css") {
+                //check filename is an external CSS file
+                var fileref = document.createElement("link");
+                fileref.setAttribute("rel", "stylesheet");
+                fileref.setAttribute("type", "text/css");
+                fileref.setAttribute("href", filename);
+              }
+              if (typeof fileref != "undefined")
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+
+            (function () {
+              let onpageLoad = localStorage.getItem("theme") || "";
+
+              if (onpageLoad === "dark-mode") {
+                loadcssfile("/css/darkmodestyle.css", "css");
+              }
+            })();
+
+            function themeToggle() {
+              let theme = localStorage.getItem("theme");
+              if (theme && theme === "dark-mode") {
+                localStorage.setItem("theme", "");
+              } else {
+                localStorage.setItem("theme", "dark-mode");
+              }
+              location.reload();
+            }
+          </script>
         </div>
       </footer>
     </div>

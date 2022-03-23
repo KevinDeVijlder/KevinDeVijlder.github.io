@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(50, 50, 50);
+    color: white;
+  }
+  
+  .darkmodebutton{
+    background-color: rgb(50, 50, 50);
+  }
+
+  .topnava {
+    border-bottom: 2px solid rgb(50, 50, 50);
+  }
+  
+  .newsarticle{
+    box-shadow: rgb(25, 25, 25) 0px 0px 20px;
+  }
+
+  .bloganouncement{
+    box-shadow: rgb(25, 25, 25) 0px 0px 20px;
+  }

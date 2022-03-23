@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/resetcss.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Owly's tree</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
   </head>
   <body>
     <div class="customcontainer">
@@ -75,10 +75,10 @@
 
         <h1 id="about">About me</h1>
         <p class="aboutmetext">
-          Hey there! My name is Kevin, although I much prefer my screenname "Owly". I am a student
-          at the University of Applied Computer Sciences in Leuven, Belgium. I
-          am currently studying Software Engineering, although my dream is to
-          work in the cyber security space.
+          Hey there! My name is Kevin, although I much prefer my screenname
+          "Owly". I am a student at the University of Applied Computer Sciences
+          in Leuven, Belgium. I am currently studying Software Engineering,
+          although my dream is to work in the cyber security space.
         </p>
         <p class="aboutmetext">
           I have some experience in pentesting and other security related fields
@@ -91,14 +91,21 @@
           them out on my blog page.
         </p>
         <p class="aboutmetext">
-          Besides being an it student, I am also a big lover of movies & tv shows.
-          And im crazy about animals. In some other life, I definitly would have
-          been a vet ;). Lastly, good food will always be apreciated.
+          Besides being an it student, I am also a big lover of movies & tv
+          shows. And im crazy about animals. In some other life, I definitly
+          would have been a vet ;). Lastly, good food will always be apreciated.
         </p>
         <p class="aboutmetext">
-         You can always find me on <a href="https://twitter.com/KevinVijlder" class="linkstyle">Twitter</a>
-         and on<a href="https://www.linkedin.com/in/kevindevijlder/" class="linkstyle footerlink">LinkedIn</a>
-         or just contact me by using the form below.
+          You can always find me on
+          <a href="https://twitter.com/KevinVijlder" class="linkstyle"
+            >Twitter</a
+          >
+          and on<a
+            href="https://www.linkedin.com/in/kevindevijlder/"
+            class="linkstyle footerlink"
+            >LinkedIn</a
+          >
+          or just contact me by using the form below.
         </p>
 
         <hr
@@ -113,7 +120,7 @@
 
         <h1 id="contact">Contact</h1>
         <p class="contacttext">
-         You can use the form below to contact me. (WiP)
+          You can use the form below to contact me. (WiP)
         </p>
       </main>
 
@@ -127,6 +134,7 @@
             background-color: #b5e2ff;
           "
         />
+        <p>For the night owls among us: <button onclick="themeToggle()" class="darkmodebutton"><i class="fa-solid fa-moon"></i></button></p>
         <p>Author: Owly</p>
         <p>
           <i class="fa-brands fa-github-alt"></i>
@@ -162,6 +170,37 @@
             </script>
           </span>
           Owly. All Rights Reserved
+          <script>
+             function loadcssfile(filename, filetype) {
+              if (filetype == "css") {
+                //check filename is an external CSS file
+                var fileref = document.createElement("link");
+                fileref.setAttribute("rel", "stylesheet");
+                fileref.setAttribute("type", "text/css");
+                fileref.setAttribute("href", filename);
+              }
+              if (typeof fileref != "undefined")
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+
+            (function () {
+              let onpageLoad = localStorage.getItem("theme") || "";
+
+              if (onpageLoad === "dark-mode") {
+                loadcssfile("/css/darkmodestyle.css", "css");
+              }
+            })();
+
+            function themeToggle() {
+              let theme = localStorage.getItem("theme");
+              if (theme && theme === "dark-mode") {
+                localStorage.setItem("theme", "");
+              } else {
+                localStorage.setItem("theme", "dark-mode");
+              }
+              location.reload();
+            }
+          </script>
         </div>
       </footer>
     </div>
