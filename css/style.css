@@ -270,6 +270,8 @@ p {
   font-family: "Inconsolata", monospace;
   font-style: italic;
   font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .divider {
@@ -333,6 +335,15 @@ footer {
   margin-left: 0.5rem;
 }
 
+.footertextleft{
+  float: left;
+}
+
+.footertextright {
+  float: right;
+  text-align: right;
+}
+
 /* Scrollbar */
 *::-webkit-scrollbar {
   width: 16px;
@@ -362,4 +373,15 @@ footer {
   color: grey;
   border: none;
   background-color: white;
+  cursor: pointer;
+  padding: 0px;
+    margin: 0px;
+}
+
+.darkmodebutton:hover{
+  color: #b5e2ff;
+  background-color: white;
+  transition: 1s ease-in-out;
+  padding: 0px;
+    margin: 0px;
 }

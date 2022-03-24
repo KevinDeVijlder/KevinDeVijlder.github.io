@@ -18,3 +18,11 @@ body {
   .bloganouncement{
     box-shadow: rgb(25, 25, 25) 0px 0px 20px;
   }
+
+  .darkmodebutton:hover{
+    color: #b5e2ff;
+    background-color: rgb(50, 50, 50);
+    transition: 1s ease-in-out;
+    padding: 0px;
+    margin: 0px;
+  }

@@ -134,74 +134,105 @@
             background-color: #b5e2ff;
           "
         />
-        <p>For the night owls among us: <button onclick="themeToggle()" class="darkmodebutton"><i class="fa-solid fa-moon"></i></button></p>
-        <p>Author: Owly</p>
-        <p>
-          <i class="fa-brands fa-github-alt"></i>
-          <a
-            href="https://github.com/KevinDeVijlder"
-            class="linkstyle footerlink"
-            >Github</a
-          >
-        </p>
-        <p>
-          <i class="fa-brands fa-twitter"></i>
-          <a
-            href="https://twitter.com/KevinVijlder"
-            class="linkstyle footerlink"
-            >Twitter</a
-          >
-        </p>
-        <p>
-          <i class="fa-brands fa-linkedin"></i>
-          <a
-            href="https://www.linkedin.com/in/kevindevijlder/"
-            class="linkstyle footerlink"
-            >LinkedIn</a
-          >
-        </p>
-        <div class="copyrighttext">
-          Copyright &copy;
-          <span id="copyright">
-            <script>
-              document
-                .getElementById("copyright")
-                .appendChild(document.createTextNode(new Date().getFullYear()));
-            </script>
-          </span>
-          Owly. All Rights Reserved
-          <script>
-             function loadcssfile(filename, filetype) {
-              if (filetype == "css") {
-                //check filename is an external CSS file
-                var fileref = document.createElement("link");
-                fileref.setAttribute("rel", "stylesheet");
-                fileref.setAttribute("type", "text/css");
-                fileref.setAttribute("href", filename);
-              }
-              if (typeof fileref != "undefined")
-                document.getElementsByTagName("head")[0].appendChild(fileref);
-            }
-
-            (function () {
-              let onpageLoad = localStorage.getItem("theme") || "";
-
-              if (onpageLoad === "dark-mode") {
-                loadcssfile("/css/darkmodestyle.css", "css");
-              }
-            })();
-
-            function themeToggle() {
-              let theme = localStorage.getItem("theme");
-              if (theme && theme === "dark-mode") {
-                localStorage.setItem("theme", "");
-              } else {
-                localStorage.setItem("theme", "dark-mode");
-              }
-              location.reload();
-            }
-          </script>
+        <div class="footertextleft">
+          <p>Author: Owly</p>
+          <p>
+            <i class="fa-brands fa-github-alt"></i>
+            <a
+              href="https://github.com/KevinDeVijlder"
+              class="linkstyle footerlink"
+              >Github</a
+            >
+          </p>
+          <p>
+            <i class="fa-brands fa-twitter"></i>
+            <a
+              href="https://twitter.com/KevinVijlder"
+              class="linkstyle footerlink"
+              >Twitter</a
+            >
+          </p>
+          <p>
+            <i class="fa-brands fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/kevindevijlder/"
+              class="linkstyle footerlink"
+              >LinkedIn</a
+            >
+          </p>
+          <div class="copyrighttext">
+            Copyright &copy;
+            <span id="copyright">
+              <script>
+                document
+                  .getElementById("copyright")
+                  .appendChild(
+                    document.createTextNode(new Date().getFullYear())
+                  );
+              </script>
+            </span>
+            Owly. All Rights Reserved
+          </div>
         </div>
+        <div class="footertextright">
+          <p>
+            Theme
+            <button onclick="themeToggle()" class="darkmodebutton">
+              <i id="darkmodebuttonicon" class="fa-solid fa-moon"></i>
+            </button>
+          </p>
+          <p>
+            <a href="/files/owlysec_pgpkey.txt" class="linkstyle footerlink"
+              >Pgp Key</a
+            ><a
+              class="linkstyle"
+              href="/files/publickey.owlysec@protonmail.com-2238576897fca0f277d91ba196088a978fa71561.asc"
+              >(<i class="fa-solid fa-cloud-arrow-down"></i>)</a
+            >
+            <i class="fa-solid fa-key"></i>
+          </p>
+          <p>
+            <a
+              href="mailto:owlysec@protonmail.com"
+              class="linkstyle footerlink"
+              >Mail</a
+            >
+            <i class="fa-solid fa-square-envelope"></i>
+          </p>
+        </div>
+        <script>
+          function loadcssfile(filename, filetype) {
+            if (filetype == "css") {
+              //check filename is an external CSS file
+              var fileref = document.createElement("link");
+              fileref.setAttribute("rel", "stylesheet");
+              fileref.setAttribute("type", "text/css");
+              fileref.setAttribute("href", filename);
+            }
+            if (typeof fileref != "undefined")
+              document.getElementsByTagName("head")[0].appendChild(fileref);
+          }
+
+          (function () {
+            let onpageLoad = localStorage.getItem("theme") || "";
+
+            if (onpageLoad === "dark-mode") {
+              loadcssfile("/css/darkmodestyle.css", "css");
+              document.getElementById("darkmodebuttonicon").className =
+                "fa-solid fa-sun";
+            }
+          })();
+
+          function themeToggle() {
+            let theme = localStorage.getItem("theme");
+            if (theme && theme === "dark-mode") {
+              localStorage.setItem("theme", "");
+            } else {
+              localStorage.setItem("theme", "dark-mode");
+            }
+            location.reload();
+          }
+        </script>
       </footer>
     </div>
   </body>

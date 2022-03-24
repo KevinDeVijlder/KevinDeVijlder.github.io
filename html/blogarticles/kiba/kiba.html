@@ -61,143 +61,129 @@
             alt="Try hack me banner"
             class="blogimagebanner"
           />
-          <div class="blogimagetext">Root Me</div>
+          <div class="blogimagetext">Kiba</div>
         </div>
-        <h1>Root Me Writeup</h1>
+        <h1>Kiba Writeup</h1>
         <p class="blogtext">
           In this write-up I show how to complete the
-          <a href="https://tryhackme.com/room/rrootme" class="linkstyle"
-            >Root Me</a
-          >
-          room on TryHackMe . It's a beginner CTF challenge, that was a lot of
-          fun! Now lets get hacking! (I will answer all questions of the room
-          and how I found the answer, though out the write-up , except for the
-          flags of course!)
+          <a class="linkstyle" href="https://tryhackme.com/room/kiba">kiba</a>
+          room on TryHackMe . The goal is to teach us about finding security
+          flaws that allow remote code execution. Now lets get hacking!
         </p>
+        <p class="blogtext">
+          I will answer all questions of the room and how I found the answer,
+          though out the write-up , except for the flags of course! If you want
+          to find the answer for a specific question, you can find them by
+          searching for: #question "insert number of the question here"
+        </p>
+
         <p class="divider">. . .</p>
 
         <h3>Initial Enumeration</h3>
-        <p class="blogtext">
-          We start with a nmap scan ( I use the -sC -sV flags to find the answer
-          to the questions, be sure to read the man page of nmap to get familiar
-          with these flags!):
-        </p>
+        <p class="blogtext">Our nmap scan shows 4 open ports.</p>
         <img
-          src="/html/blogarticles/rootme/rootme_nmap.png"
+          src="/html/blogarticles/kiba/kiba_nmap.png"
           alt="Nmap scan result"
           class="blogimage"
         />
         <p class="blogimagealt">Nmap scan result</p>
         <p class="blogtext">
-          In the scan we see that there are 2 ports open. We find out that the
-          apache version is 2.4.29. The service running on port 22 is ssh.
-        </p>
-        <p class="blogtext">
-          Now we get the advice to scan the site running on the web server with
-          gobuster. This tool will find all the directories on the web server. I
-          use the common.txt word list for this task. On parrotsec os ( And if I
-          remember correctly, its in the same place on kali linux) this word
-          list can be found under “/usr/share/wordlists/dirb/common.txt “. The
-          command for gobuster:
+          After checking out the web server running on port 80, and using
+          gobuster on it, I realize we need to be somewhere else. I checked port
+          5044, but no dice. Finally, on port 5601 we find kibana running. A
+          quick google search gives the following information:
         </p>
         <p class="blogtexthighlight">
-          gobuster dir -w /usr/share/wordlists/dirb/common.txt -u
-          http://deployed/target vm ip here>
+          Kibana is a free and open user interface that lets you visualize your
+          Elasticsearch data and navigate the Elastic Stack. Do anything from
+          tracking query load to understanding the way requests flow through
+          your apps
         </p>
+        <p class="blogtext">Time to look for a vulnerability with this!</p>
+        <p class="blogtext">
+          The answer to #question1 is “prototype pollution”, you can find this
+          by googling “vulnerability prototype-based inheritance”
+        </p>
+        <p class="blogtext">
+          After some research, we find there is a specific vulnerability for
+          kibana! The answer to #question3 is: “CVE-2019–7609”.
+        </p>
+        <p class="blogtext">
+          While searching for this cve, I stumbled upon a github repo that
+          contained a script to exploit this vulnerability! The link to the
+          repo:
+          <a class="linkstyle" href="https://github.com/LandGrey/CVE-2019-7609/"
+            >repo link</a
+          >
+        </p>
+        <p class="blogtext">
+          Before we run the python script, we have to set up a netcat listener
+          to get a reverse shell. We run:
+        </p>
+        <p class="blogtexthighlight">nc -lvnp 9876</p>
         <img
-          src="/html/blogarticles/rootme/rootme_gobuster.png"
-          alt="Gobuster result"
+          src="/html/blogarticles/kiba/kiba_netcat.png"
+          alt="Netcat listener"
           class="blogimage"
         />
-        <p class="blogimagealt">Gobuster result</p>
-        <p class="blogtext">This gives us the “/panel/” directory.</p>
+        <p class="blogimagealt">Netcat listener</p>
+        <p class="blogtext">
+          Then, we run the exploit (make sure that u use your tun0/tryhackme ip
+          adres as -host flag and that the -port flag is the same as your netcat
+          listener)
+        </p>
+        <img
+          src="/html/blogarticles/kiba/kiba_exploit.png"
+          alt="Exploit"
+          class="blogimage"
+        />
+        <p class="blogimagealt">Exploit</p>
+        <img
+          src="/html/blogarticles/kiba/kiba_shell.png"
+          alt="Shell"
+          class="blogimage"
+        />
+        <p class="blogimagealt">Shell</p>
+        <p class="blogtext">Et voila! We have a shell!</p>
+        <p class="blogtext">
+          Here we find the user.txt flag in the home directory of kiba (cd
+          /home/kiba). I also find the answer to #question2 here: there is a
+          file called elasticsearch-6.5.4.deb in the home directory of kiba.
+          6.5.4 is the version.
+        </p>
         <p class="divider">. . .</p>
-
-        <h3>Getting a shell</h3>
-        <p class="blogtext">
-          When we visit the /panel/ page, we are greeted with a file upload
-          form. Lets try uploading a file containing a reverse shell script
-          written in php. I use the pentestmonkey one, found at
-          http://pentestmonkey.net/tools/web-shells/php-reverse-shell . Be sure
-          to put in your local thm ip adres and remember the port number you
-          choose.
-        </p>
-        <img
-          src="/html/blogarticles/rootme/rootme_php_reverse.png"
-          alt="Php reverse shell file from pentestmonkey"
-          class="blogimage"
-        />
-        <p class="blogimagealt">Php reverse shell file from pentestmonkey</p>
-        <p class="blogtext">
-          When we first try to upload this file, we get an error message saying
-          we cant upload this type of file.
-        </p>
-        <p class="blogtext">
-          So we are going to trick this form, and change the extension from our
-          file from “.php” to “.php5”. Now we can upload the file!
-        </p>
-        <p class="blogtext">
-          Now we start a netcat listener on the port we specified in our reverse
-          shell file:
-        </p>
-        <img
-          src="/html/blogarticles/rootme/rootme_nc.png"
-          alt="nc -lvnp"
-          class="blogimage"
-        />
-        <p class="blogimagealt">nc -lvnp</p>
-        <p class="blogtext">
-          Then we browse to the /uploads directory on the web server (we found
-          this directory with our gobuster scan!). There we click on the file we
-          just uploaded. Then we switch back to the terminal that had our netcat
-          listener and we see we have a shell!
-        </p>
-        <img
-          src="/html/blogarticles/rootme/rootme_shell.png"
-          alt="shell"
-          class="blogimage"
-        />
-        <p class="blogimagealt">shell</p>
-        <p class="blogtext">
-          After some looking around, I find the user flag in the “/var/www”
-          directory.
-        </p>
-        <img
-          src="/html/blogarticles/rootme/rootme_user_txt.png"
-          alt="user.txt"
-          class="blogimage"
-        />
-        <p class="blogimagealt">user.txt</p>
-        <p class="divider">. . .</p>
-
         <h3>Root flag</h3>
         <p class="blogtext">
-          The privilege escalation is a fun one! Since we have no user or
-          password, we will need to find a different way to get our precious
-          root flag. We search for all files with the suid permission. I use the
-          following command:
-        </p>
-        <p class="blogtexthighlight">find / -perm -u=s -type f 2>/dev/null</p>
-        <p class="blogtext">
-          This gives us a list of files with the suid set. The one that we can
-          abuse is /usr/bin/python. We go to
-          <a href="https://gtfobins.github.io/" class="linkstyle">gtfobins</a>
-          and look for python. Great, we find a SUID priv esc! We run:
-        </p>
-        <p class="blogtexthighlight">
-          /usr/bin/python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’
-        </p>
-        <p class="blogtext">
-          This makes us root user on the system. Now we can just read the root
-          flag file and that’s it!
+          First off, the answer to #question6 is: “getcap -r /”. When we run
+          this command we get:
         </p>
         <img
-          src="/html/blogarticles/rootme/rootme_rootflag.png"
-          alt="root.txt"
+          src="/html/blogarticles/kiba/kiba_getcap.png"
+          alt="getcap -r"
           class="blogimage"
         />
-        <p class="blogimagealt">root.txt</p>
-        <p class="blogtext">Hooray!!! We did it!</p>
+        <p class="blogimagealt">getcap -r</p>
+        <p class="blogtext">
+          Lets see if we can abuse this python3 setuid. I search for python3 on
+          https://gtfobins.github.io/ and find an exploit we can use to gain
+          root. Do note, the exploit is with just python, but in our case we
+          need to change that to python3. The exploit I used can be find under
+          the capabilities section:
+        </p>
+        <p class="blogtexthighlight">
+          ./python3 -c ‘import os; os.setuid(0); os.system(“/bin/sh”)’
+        </p>
+        <img
+          src="/html/blogarticles/kiba/kiba_root.png"
+          alt="root"
+          class="blogimage"
+        />
+        <p class="blogimagealt">root</p>
+        <p class="blogtext">
+          There we go, we become root and we can read the root flag, found in
+          the /root directory. Hooray!
+        </p>
+
         <p class="divider">. . .</p>
 
         <h3>Outro</h3>
@@ -205,8 +191,9 @@
           I hope you learned something new and enjoyed my write-up!
         </p>
         <p class="blogtext">
-          Thank you for creating this room! I really like these types of CTF
-          challenges as they are great for beginners.
+          I thoroughly enjoyed this room! I had never abused or even heard of
+          capabilities in linux, so I learned and researched a lot thanks to
+          this room! So big kuddos to the creator!
         </p>
         <p class="blogtext">
           Find me on TryHackMe:
@@ -284,9 +271,7 @@
             <i class="fa-solid fa-key"></i>
           </p>
           <p>
-            <a
-              href="mailto:owlysec@protonmail.com"
-              class="linkstyle footerlink"
+            <a href="mailto:owlysec@protonmail.com" class="linkstyle footerlink"
               >Mail</a
             >
             <i class="fa-solid fa-square-envelope"></i>
