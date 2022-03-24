@@ -236,6 +236,30 @@ p {
   transition: 1s ease-in-out;
 }
 
+.blogannoucementcontent{
+  display: none;
+}
+
+#blogannoucementloadmore{
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Inconsolata", monospace;
+  color: grey;
+  font-weight: bold;
+  transition: 1s ease-in-out;
+}
+
+#blogannoucementloadmore:hover{
+  color: #b5e2ff;
+  transition: 1s ease-in-out;
+}
+
+.blogannoucementnocontent {
+  color: grey !important;
+  background-color: transparent !important;
+  pointer-events: none;
+}
+
 /* Individual blog text */
 .blogimagecontainer {
   position: relative;
