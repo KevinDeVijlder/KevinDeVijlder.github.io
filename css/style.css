@@ -409,3 +409,12 @@ footer {
   padding: 0px;
     margin: 0px;
 }
+
+/* disabled links */
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+  pointer-events: none;
+}
