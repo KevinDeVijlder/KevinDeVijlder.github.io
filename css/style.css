@@ -41,16 +41,14 @@ main {
   font-size: 28px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
-}
-
-.topnava {
+  transition: 600ms ease-in-out;
   border-bottom: 2px solid white;
 }
 
 .topnava:hover {
   color: gray;
   border-bottom: 2px solid gray;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 /* Hexagon hover */
@@ -64,12 +62,12 @@ main {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 .imagecontainer:hover .overlayhexagon {
   opacity: 1;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 .textinhexagon {
@@ -112,7 +110,7 @@ main {
 .activepage:hover{
   color: #b5e2ff;
   border-bottom: 2px solid #b5e2ff;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 /* Link style */
@@ -225,15 +223,13 @@ p {
   font-family: "Inconsolata", monospace;
   margin-top: 1rem;
   cursor: pointer;
-  transition: 1s ease-in-out;
+  transition: 500ms ease-in-out;
   box-shadow: #b5e2ff 2px 2px 20px;
 }
 
 .bloganouncementbutton:hover{
-  background-color: #67b7ec;
-  border-color: #67b7ec;
-  box-shadow: #67b7ec 2px 2px 20px;
-  transition: 1s ease-in-out;
+  transition: 500ms ease-in-out;
+  transform: translatey(-15px);
 }
 
 .blogannoucementcontent{
@@ -246,12 +242,12 @@ p {
   font-family: "Inconsolata", monospace;
   color: grey;
   font-weight: bold;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 #blogannoucementloadmore:hover{
   color: #b5e2ff;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 .blogannoucementnocontent {
@@ -399,13 +395,14 @@ footer {
   background-color: white;
   cursor: pointer;
   padding: 0px;
-    margin: 0px;
+  margin: 0px;
+  transition: 600ms ease-in-out;
 }
 
 .darkmodebutton:hover{
   color: #b5e2ff;
   background-color: white;
-  transition: 1s ease-in-out;
+  transition: 600ms ease-in-out;
   padding: 0px;
     margin: 0px;
 }

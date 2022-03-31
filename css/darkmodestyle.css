@@ -5,6 +5,7 @@ body {
   
   .darkmodebutton{
     background-color: rgb(50, 50, 50);
+    transition: 600ms ease-in-out;
   }
 
   .topnava {
@@ -22,7 +23,7 @@ body {
   .darkmodebutton:hover{
     color: #b5e2ff;
     background-color: rgb(50, 50, 50);
-    transition: 1s ease-in-out;
+    transition: 600ms ease-in-out;
     padding: 0px;
     margin: 0px;
   }
