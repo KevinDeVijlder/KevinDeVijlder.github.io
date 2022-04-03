@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/resetcss.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Owly's tree</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+  </head>
+  <body>
+    <div class="customcontainer">
+      <header>
+        <div class="topnav">
+          <!-- Centered link -->
+          <div class="topnav-centered">
+            <div class="imagecontainer">
+              <a href="/index.html" class="hexagonimagehover"
+                ><img
+                  class="hexagonimage"
+                  src="/images/owly_hexagon.png"
+                  alt="Profile picture"
+                />
+                <div class="overlayhexagon">
+                  <div class="textinhexagon">Home</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Left-aligned links (default) -->
+          <a href="/html/news.html" class="topnava">News</a>
+          <a href="/index.html#contact" class="topnava">Contact</a>
+
+          <!-- Right-aligned links -->
+          <div class="topnav-right">
+            <a href="/index.html#about" class="topnava">About</a>
+            <a href="/html/blog.html" class="topnava activepage">Blog</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="blogimagecontainer">
+          <img
+            src="/images/thm_banner.png"
+            alt="Try hack me banner"
+            class="blogimagebanner"
+          />
+          <div class="blogimagetext">Easy Peasy</div>
+        </div>
+        <h1>Easy Peasy Writeup</h1>
+        <p class="blogtext">
+          In this write-up I show how to complete the
+          <a href="https://tryhackme.com/room/easypeasyctf" class="linkstyle"
+            >Easy Peasy CTF</a
+          >
+          room on TryHackMe (https://tryhackme.com/room/easypeasyctf). The room
+          has us use nmap and gobuster for our initial access and then use a
+          vulnerable cronjob to escalate to root. Now lets get hacking!
+        </p>
+        <p class="divider">. . .</p>
+
+        <h3>Task 1</h3>
+        <p class="blogtext">
+          We start with running a basic nmap against all ports to see which
+          services are running:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_nmap.png"
+          alt="Nmap scan result"
+          class="blogimage"
+        />
+        <p class="blogimagealt">nmap -p- "deployed vm ip here"></p>
+        <p class="blogtext">
+          We see 3 open ports, now I run a more detailed scan on those ports
+          only:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_nmap_depth.png"
+          alt="Nmap in depth scan result"
+          class="blogimage"
+        />
+        <p class="blogimagealt">
+          nmap -sC -sV -p 80,6498,65524 "deployed vm ip here">
+        </p>
+        <p class="blogtext">
+          With this information we can answer all the questions in Task 1:
+        </p>
+        <p class="blogtextquestion">Question #1: how many ports are open</p>
+        <p class="blogtext">
+          We see from our small nmap scan that 3 ports are open
+        </p>
+        <p class="blogtextquestion">
+          Question #2: what is the version of nginx?
+        </p>
+        <p class="blogtext">
+          In the large nmap scan result we see the nginx version is 1.16.1
+        </p>
+        <p class="blogtextquestion">
+          Question #3: what is running on the highest port?
+        </p>
+        <p class="blogtext">
+          Our scan shows us that on the highest port, port 65524, apache is
+          running.
+        </p>
+
+        <p class="divider">. . .</p>
+
+        <h3>Task 2</h3>
+        <h4>Flag 1</h4>
+        <p class="blogtext">
+          I start on the web server running on port 80. Its showing the default
+          ngingx page. Lets see if we can find any hidden directories using
+          gobuster. I use the common.txt wordlist for this.
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_gobuster.png"
+          alt="gobuster scan"
+          class="blogimage"
+        />
+        <p class="blogimagealt">
+          gobuster dir -w /usr/share/wordlists/dirb/common.txt -u
+          http://"deployed vm ip here"
+        </p>
+        <p class="blogtext">
+          The /hidden directory pops up. Upon visiting this page, we see nothing
+          but a picture. The “view source” doesn't bring us any further… Could
+          there be another directory hidden after this one? I run the same
+          gobuster command but this time on the /hidden directory:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_gobuster_2.png"
+          alt="gobuster scan 2"
+          class="blogimage"
+        />
+        <p class="blogimagealt">
+          gobuster dir -w /usr/share/wordlists/dirb/common.txt -u
+          http://"deployed vm ip here"/hidden
+        </p>
+        <p class="blogtext">
+          Gotcha, when we visit this url we get another page with a picture, but
+          when we “view source”, we find something:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_page_source.png"
+          alt="View page source"
+          class="blogimage"
+        />
+        <p class="blogimagealt">View Page Source</p>
+        <p class="blogtext">
+          The hidden text, looks like a base64 encoded string. We can decode
+          this using a online decoder or straight from the command line:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_base64.png"
+          alt="Nmap in depth scan result"
+          class="blogimage"
+        />
+        <p class="blogimagealt">echo “base64 string here” | base64 -d</p>
+        <p class="blogtext">Thats flag 1!</p>
+
+        <p class="divider">. . .</p>
+
+        <h4>Flag 2</h4>
+        <p class="blogtext">
+          I’m guessing the second flag will be on the webserver running on port
+          65524. By running another gobuster scan on this site, I spot the
+          /robots.txt page. Lets go check that out:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_robottxt.png"
+          alt="robots.txt"
+          class="blogimage"
+        />
+        <p class="blogimagealt">robots.txt</p>
+        <p class="blogtext">
+          The string after user agent looks like its a hash. Just to be sure, I
+          run hash-identifier on it:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_hashidentifier.png"
+          alt="hash identifier"
+          class="blogimage"
+        />
+        <p class="blogimagealt">hash-identifier "hash here"</p>
+        <p class="blogtext">
+          Lets see if we can crack this hash… I first tried with crackstation
+          but no dice there… I had better luck on md5hashing.net! We find the
+          second flag when we look up our found hash as md5 hash.
+        </p>
+
+        <p class="divider">. . .</p>
+
+        <h4>Flag 3</h4>
+        <p class="blogtext">
+          This one was rather easy. When looking though the source of the
+          default apache page on port 65524, we find flag 3 in clear text:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_source.png"
+          alt="flag 3 in the page source"
+          class="blogimage"
+        />
+        <p class="blogimagealt">flag 3 in the page source</p>
+
+        <p class="divider">. . .</p>
+
+        <h4>Flag 4</h4>
+        <p class="blogtext">
+          On the same page, we also find something else in the source code:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_source2.png"
+          alt="page source"
+          class="blogimage"
+        />
+        <p class="blogimagealt">page source</p>
+        <p class="blogtext">
+          We find what looks like another string that we need to decode. The
+          hint says: “its encoded with ba..”. I go though base64, base32 and 16,
+          but as I feared, no dice… This one is going to be harder… After a lot
+          of searching and breaking my mind, I finally find base62 (wait what,
+          this exists?). Using an online decoder, We find that the decoded
+          string is a hidden directory(this is also the answer to question 4).
+        </p>
+        <p class="blogtext">
+          When we visit this directory, we are greeted with a page with a
+          picture once again. I save the image and check it with steghide. We
+          are requested a password for this. The page source reveals another
+          hash that we will need to crack. We are provided with a wordlist and a
+          hint on what format the hash is. Time to fire up JohnTheRipper:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_john.png"
+          alt="John the Ripper"
+          class="blogimage"
+        />
+        <p class="blogimagealt">page source</p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_john2.png"
+          alt="John the Ripper output"
+          class="blogimage"
+        />
+        <p class="blogimagealt">John the Ripper output</p>
+        <p class="blogtext">
+          We find a password, now we can use that password to extract the file
+          from our image with steghide:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_steg.png"
+          alt="Steghide"
+          class="blogimage"
+        />
+        <p class="blogimagealt">steghide</p>
+        <p class="blogtext">(Bonus:)</p>
+        <p class="blogtext">
+          We can skip the need for cracking the hash, by using stegcracker on
+          the picture file and using the wordlist given to us:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_stegcracker.png"
+          alt="Stegcracker"
+          class="blogimage"
+        />
+        <p class="blogimagealt">stegcracker</p>
+        <p class="blogtext">
+          Moving on, we read the output of our new secrettext.txt file, and we
+          find a username and some binary text. Using an online converter, we
+          find the password for user boring:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_binary.png"
+          alt="binary"
+          class="blogimage"
+        />
+        <p class="blogimagealt">binary</p>
+        <p class="blogtext">
+          We ssh into the machine. Remember our nmap scan? The ssh service is
+          not running on the default port 22, instead its running on port 6498!
+          You can specify the port you wish to connect to in your command with
+          the -p flag:
+        </p>
+        <p class="blogtexthighlight">
+          ssh boring@"deployed vm ip here" -p 6498
+        </p>
+        <p class="blogtext">
+          Once we are in the machine, we find the user.txt file sitting in the
+          user boring’s home directory. But when we read the file, it seems our
+          flag got a bit messed up! The hint says it got rotated. We can easily
+          find an online ROT decrypter. It turns out its rot -13.
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_rot13.png"
+          alt="binary"
+          class="blogimage"
+        />
+        <p class="blogimagealt">rot 13</p>
+        <p class="blogtext">We now have our user flag!</p>
+
+        <p class="divider">. . .</p>
+
+        <h3>Root flag</h3>
+        <p class="blogtext">
+          For this, I started with checking the crontab since the description of
+          the room told us we were going to exploit a cron job. I check the
+          contents of /etc/crontab:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_crontab.png"
+          alt="crontab"
+          class="blogimage"
+        />
+        <p class="blogimagealt">crontab</p>
+        <p class="blogtext">
+          This runs with sudo, I think we are one step closer to a root shell! I
+          check the contens and permissions of the file:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_crontabperms.png"
+          alt="crontab permissions"
+          class="blogimage"
+        />
+        <p class="blogimagealt">crontab permissions</p>
+        <p class="blogtext">
+          Time to reverse shell this! I start with setting up my netcat listener
+          and then I add a bash reverse shell (from pentestmonkeys) to the
+          cronjob file:
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_netcat.png"
+          alt="netcat"
+          class="blogimage"
+        />
+        <p class="blogimagealt">netcat</p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_revshell.png"
+          alt="reverse shell"
+          class="blogimage"
+        />
+        <p class="blogimagealt">reverse shell</p>
+        <p class="blogtext">
+          This can take a minute, but eventually u are greeted with a root
+          shell!
+        </p>
+        <img
+          src="/html/blogarticles/easypeasy/easypeasy_rootshell.png"
+          alt="root shell"
+          class="blogimage"
+        />
+        <p class="blogimagealt">root shell and flag</p>
+        <p class="blogtext">There we have it, our root flag! Hooray!</p>
+
+        <p class="divider">. . .</p>
+
+        <h3>Outro</h3>
+        <p class="blogtext">
+          I hope you learned something new and enjoyed my write-up!
+        </p>
+        <p class="blogtext">
+          Big thank you to the creator of the room! It was challenging and a lot
+          of fun hunting all these clues!
+        </p>
+        <p class="blogtext">
+          Find me on TryHackMe:
+          <a href="https://tryhackme.com/p/Owly" class="linkstyle"
+            ><i class="fa-solid fa-circle-user"></i> Owly</a
+          >
+        </p>
+      </main>
+
+      <footer>
+        <hr
+          class="footerline"
+          style="
+            height: 5px;
+            border-width: 0;
+            color: #b5e2ff;
+            background-color: #b5e2ff;
+          "
+        />
+        <div class="footertextleft">
+          <p>Author: Owly</p>
+          <p>
+            <i class="fa-brands fa-github-alt"></i>
+            <a
+              href="https://github.com/KevinDeVijlder"
+              class="linkstyle footerlink"
+              >Github</a
+            >
+          </p>
+          <p>
+            <i class="fa-brands fa-twitter"></i>
+            <a
+              href="https://twitter.com/KevinVijlder"
+              class="linkstyle footerlink"
+              >Twitter</a
+            >
+          </p>
+          <p>
+            <i class="fa-brands fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/kevindevijlder/"
+              class="linkstyle footerlink"
+              >LinkedIn</a
+            >
+          </p>
+          <div class="copyrighttext">
+            Copyright &copy;
+            <span id="copyright">
+              <script>
+                document
+                  .getElementById("copyright")
+                  .appendChild(
+                    document.createTextNode(new Date().getFullYear())
+                  );
+              </script>
+            </span>
+            Owly. All Rights Reserved
+          </div>
+        </div>
+        <div class="footertextright">
+          <p>
+            Theme
+            <button onclick="themeToggle()" class="darkmodebutton">
+              <i id="darkmodebuttonicon" class="fa-solid fa-moon"></i>
+            </button>
+          </p>
+          <p>
+            <a href="/files/owlysec_pgpkey.txt" class="linkstyle footerlink"
+              >Pgp Key</a
+            ><a
+              class="linkstyle"
+              href="/files/publickey.owlysec@protonmail.com-2238576897fca0f277d91ba196088a978fa71561.asc"
+              >(<i class="fa-solid fa-cloud-arrow-down"></i>)</a
+            >
+            <i class="fa-solid fa-key"></i>
+          </p>
+          <p>
+            <a href="mailto:owlysec@protonmail.com" class="linkstyle footerlink"
+              >Mail</a
+            >
+            <i class="fa-solid fa-envelope"></i>
+          </p>
+        </div>
+        <script>
+          function loadcssfile(filename, filetype) {
+            if (filetype == "css") {
+              //check filename is an external CSS file
+              var fileref = document.createElement("link");
+              fileref.setAttribute("rel", "stylesheet");
+              fileref.setAttribute("type", "text/css");
+              fileref.setAttribute("href", filename);
+            }
+            if (typeof fileref != "undefined")
+              document.getElementsByTagName("head")[0].appendChild(fileref);
+          }
+
+          (function () {
+            let onpageLoad = localStorage.getItem("theme") || "";
+
+            if (onpageLoad === "dark-mode") {
+              loadcssfile("/css/darkmodestyle.css", "css");
+              document.getElementById("darkmodebuttonicon").className =
+                "fa-solid fa-sun";
+            }
+          })();
+
+          function themeToggle() {
+            let theme = localStorage.getItem("theme");
+            if (theme && theme === "dark-mode") {
+              localStorage.setItem("theme", "");
+            } else {
+              localStorage.setItem("theme", "dark-mode");
+            }
+            location.reload();
+          }
+        </script>
+      </footer>
+    </div>
+  </body>
+</html>

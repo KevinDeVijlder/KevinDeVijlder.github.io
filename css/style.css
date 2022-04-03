@@ -131,7 +131,6 @@ main {
 /* Styling body text */
 h1 {
   font-size: 25px;
-  font-weight: bold;
   color: #b5e2ff;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
@@ -141,7 +140,6 @@ h1 {
 
 h2{
   font-size: 22.5px;
-  font-weight: bold;
   color: #b5e2ff;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
@@ -150,10 +148,18 @@ h2{
 }
 
 h3{
+  font-size: 22.5px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+  margin-bottom: 1rem;
+  text-shadow: grey 2px 2px 30px;
+}
+
+h4{
   font-size: 20px;
   font-weight: bold;
   color: grey;
-  font-weight: bold;
   font-family: "Inconsolata", monospace;
   margin-bottom: 1rem;
   text-shadow: grey 2px 2px 30px;
@@ -315,17 +321,23 @@ p {
   max-width: 750px;
   max-height: auto;
   display:block;
-  margin-left:auto;
-  margin-right:auto;
 }
 
 .blogimagealt{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   color: grey;
   font-family: "Inconsolata", monospace;
-  text-align: center;
   margin-bottom: 2.5rem;
+}
+
+.blogtextquestion{
+  font-size: 20px;
+  color: grey;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Contact form */
