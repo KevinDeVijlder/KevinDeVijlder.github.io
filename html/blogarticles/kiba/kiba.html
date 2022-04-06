@@ -64,6 +64,8 @@
           <div class="blogimagetext">Kiba</div>
         </div>
         <h1>Kiba Writeup</h1>
+        <p class="blogtextcalenderdate"><i class="fa-solid fa-calendar-day"></i> August 30, 2020</p>
+
         <p class="blogtext">
           In this write-up I show how to complete the
           <a class="linkstyle" href="https://tryhackme.com/room/kiba">kiba</a>
@@ -77,9 +79,15 @@
           searching for: #question "insert number of the question here"
         </p>
 
+        <p class="blogtableofcontenttitle" id="tableofcontent">Table of content</p>
+        <ol type="I" class="blogtableofcontent">
+          <li><a href="#enumeration" class="blogtableofcontentitem">Initial Enumeration</a></li>
+          <li><a href="#rootflag" class="blogtableofcontentitem">Root flag</a></li>
+        </ol>
+
         <p class="divider">. . .</p>
 
-        <h3>Initial Enumeration</h3>
+        <h3 id="enumeration">Initial Enumeration <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
         <p class="blogtext">Our nmap scan shows 4 open ports.</p>
         <img
           src="/html/blogarticles/kiba/kiba_nmap.png"
@@ -152,7 +160,7 @@
           6.5.4 is the version.
         </p>
         <p class="divider">. . .</p>
-        <h3>Root flag</h3>
+        <h3 id="rootflag">Root flag <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
         <p class="blogtext">
           First off, the answer to #question6 is: “getcap -r /”. When we run
           this command we get:
@@ -204,15 +212,7 @@
       </main>
 
       <footer>
-        <hr
-          class="footerline"
-          style="
-            height: 5px;
-            border-width: 0;
-            color: #b5e2ff;
-            background-color: #b5e2ff;
-          "
-        />
+        <hr class="footerline" />
         <div class="footertextleft">
           <p>Author: Owly</p>
           <p>

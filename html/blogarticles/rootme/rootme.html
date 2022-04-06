@@ -64,6 +64,8 @@
           <div class="blogimagetext">Root Me</div>
         </div>
         <h1>Root Me Writeup</h1>
+        <p class="blogtextcalenderdate"><i class="fa-solid fa-calendar-day"></i> September 13, 2020</p>
+
         <p class="blogtext">
           In this write-up I show how to complete the
           <a href="https://tryhackme.com/room/rrootme" class="linkstyle"
@@ -74,9 +76,17 @@
           and how I found the answer, though out the write-up , except for the
           flags of course!)
         </p>
+
+        <p class="blogtableofcontenttitle" id="tableofcontent">Table of content</p>
+        <ol type="I" class="blogtableofcontent">
+          <li><a href="#enumeration" class="blogtableofcontentitem">Initial Enumeration</a></li>
+          <li><a href="#shell" class="blogtableofcontentitem">Getting a Shell</a></li>
+          <li><a href="#rootflag" class="blogtableofcontentitem">Root flag</a></li>
+        </ol>
+
         <p class="divider">. . .</p>
 
-        <h3>Initial Enumeration</h3>
+        <h3 id="enumeration">Initial Enumeration <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
         <p class="blogtext">
           We start with a nmap scan ( I use the -sC -sV flags to find the answer
           to the questions, be sure to read the man page of nmap to get familiar
@@ -111,9 +121,10 @@
         />
         <p class="blogimagealt">Gobuster result</p>
         <p class="blogtext">This gives us the “/panel/” directory.</p>
+        
         <p class="divider">. . .</p>
 
-        <h3>Getting a shell</h3>
+        <h3 id="shell">Getting a shell <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
         <p class="blogtext">
           When we visit the /panel/ page, we are greeted with a file upload
           form. Lets try uploading a file containing a reverse shell script
@@ -170,7 +181,7 @@
         <p class="blogimagealt">user.txt</p>
         <p class="divider">. . .</p>
 
-        <h3>Root flag</h3>
+        <h3 id="rootflag">Root flag <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
         <p class="blogtext">
           The privilege escalation is a fun one! Since we have no user or
           password, we will need to find a different way to get our precious
@@ -217,15 +228,7 @@
       </main>
 
       <footer>
-        <hr
-          class="footerline"
-          style="
-            height: 5px;
-            border-width: 0;
-            color: #b5e2ff;
-            background-color: #b5e2ff;
-          "
-        />
+        <hr class="footerline" />
         <div class="footertextleft">
           <p>Author: Owly</p>
           <p>
@@ -284,9 +287,7 @@
             <i class="fa-solid fa-key"></i>
           </p>
           <p>
-            <a
-              href="mailto:owlysec@protonmail.com"
-              class="linkstyle footerlink"
+            <a href="mailto:owlysec@protonmail.com" class="linkstyle footerlink"
               >Mail</a
             >
             <i class="fa-solid fa-envelope"></i>
