@@ -55,7 +55,7 @@
       </header>
 
       <main>
-        <div class="blogimagecontainer">
+        <div id="top" class="blogimagecontainer">
           <img
             src="/images/thm_banner.png"
             alt="Try hack me banner"
@@ -90,7 +90,7 @@
 
         <p class="divider">. . .</p>
 
-        <h3 id="task1">Task 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
+        <h3 id="task1">Task 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
         <p class="blogtext">
           We start with running a basic nmap against all ports to see which
           services are running:
@@ -136,8 +136,8 @@
 
         <p class="divider">. . .</p>
 
-        <h3 id="task2">Task 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
-        <h4 id="flag1">Flag 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h4>
+        <h3 id="task2">Task 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
+        <h4 id="flag1">Flag 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
         <p class="blogtext">
           I start on the web server running on port 80. Its showing the default
           ngingx page. Lets see if we can find any hidden directories using
@@ -191,7 +191,7 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag2">Flag 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h4>
+        <h4 id="flag2">Flag 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
         <p class="blogtext">
           I’m guessing the second flag will be on the webserver running on port
           65524. By running another gobuster scan on this site, I spot the
@@ -221,7 +221,7 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag3">Flag 3 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h4>
+        <h4 id="flag3">Flag 3 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
         <p class="blogtext">
           This one was rather easy. When looking though the source of the
           default apache page on port 65524, we find flag 3 in clear text:
@@ -235,7 +235,7 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag4">Flag 4 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h4>
+        <h4 id="flag4">Flag 4 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
         <p class="blogtext">
           On the same page, we also find something else in the source code:
         </p>
@@ -329,7 +329,7 @@
 
         <p class="divider">. . .</p>
 
-        <h3 id="rootflag">Root flag <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></h3>
+        <h3 id="rootflag">Root flag <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
         <p class="blogtext">
           For this, I started with checking the crontab since the description of
           the room told us we were going to exploit a cron job. I check the
@@ -396,6 +396,8 @@
             ><i class="fa-solid fa-circle-user"></i> Owly</a
           >
         </p>
+
+        <a href="#top" class="backtotopbutton">Back to top</a>
       </main>
 
       <footer>

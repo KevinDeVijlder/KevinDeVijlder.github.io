@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* hexagon image */
 .hexagonimage {
   max-width: 125px;
@@ -53,14 +57,14 @@ main {
   font-size: 28px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
   border-bottom: 2px solid white;
 }
 
 .topnava:hover {
   color: gray;
   border-bottom: 2px solid gray;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 /* Hexagon hover */
@@ -74,12 +78,12 @@ main {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .imagecontainer:hover .overlayhexagon {
   opacity: 1;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .textinhexagon {
@@ -122,7 +126,38 @@ main {
 .activepage:hover{
   color: #b5e2ff;
   border-bottom: 2px solid #b5e2ff;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+/* navbarvertical */
+
+.navbarverticalul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  background-color: #b5e2ff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  border-radius: 25px;
+  box-shadow: #b5e2ff 2px 2px 20px;
+}
+
+.navbarverticala{
+  display: block;
+  color: gray;
+  padding: 16px;
+  text-decoration: none;
+  transition: 500ms ease-in-out;
+}
+
+.navbarverticala:hover{
+  transition: 500ms ease-in-out;
+  transform: translatex(20px);
 }
 
 /* Link style */
@@ -130,14 +165,14 @@ main {
   color: #b5e2ff;
   text-decoration: none;
   font-family: "Inconsolata", monospace;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .linkstyle:hover {
   color: #67b7ec;
   text-decoration: none;
   font-family: "Inconsolata", monospace;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 /* Styling body text */
@@ -247,12 +282,12 @@ p {
   font-family: "Inconsolata", monospace;
   font-weight: bold;
   text-decoration: none;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .blogtableofcontentitem:hover{
   color: #b5e2ff;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .blogtableofcontentnestedlayerone{
@@ -270,12 +305,12 @@ p {
   font-family: "Inconsolata", monospace;
   font-weight: bold;
   text-decoration: none;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .blogtableofcontentitemnestedlayerone:hover{
   color: #b5e2ff;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .bloganouncement{
@@ -326,13 +361,13 @@ p {
   font-family: "Inconsolata", monospace;
   color: grey;
   font-weight: bold;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
   text-shadow: grey 2px 2px 15px;
 }
 
 #blogannoucementloadmore:hover{
   color: #b5e2ff;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
   text-shadow: #b5e2ff 2px 2px 15px;
 }
 
@@ -347,6 +382,7 @@ p {
   position: relative;
   text-align: center;
   margin-bottom: 5rem;
+  margin-top: 10px;
 }
 
 .blogimagebanner{
@@ -411,6 +447,34 @@ p {
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.backtotopbutton{
+  background-color: #b5e2ff;
+  border-width: 2px;
+  border-radius: 50px;
+  border-color: #b5e2ff;
+  border-style: solid;
+  color: grey;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+  box-shadow: #b5e2ff 2px 2px 20px;
+  position: fixed;
+  bottom: 25px;
+  transform: translatex(-12.5rem);
+}
+
+.backtotopbutton:hover{
+  transition: 500ms ease-in-out;
+  transform: translate(-12.5rem, -15px);
 }
 
 /* Contact form */
@@ -488,15 +552,15 @@ footer {
   cursor: pointer;
   padding: 0px;
   margin: 0px;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .darkmodebutton:hover{
   color: #b5e2ff;
   background-color: white;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
   padding: 0px;
-    margin: 0px;
+  margin: 0px;
 }
 
 /* disabled links */
