@@ -26,11 +26,11 @@
     <div class="customcontainer">
       <header>
         <ul class="navbarverticalul">
-          <li><a class="navbarverticala" href="/index.html">Home</a></li>
-          <li><a class="navbarverticala" href="/html/news.html">News</a></li>
-          <li><a class="navbarverticala" href="/index.html#certs">Certs</a></li>
-          <li><a class="navbarverticala" href="/index.html#about">About</a></li>
-          <li><a class="navbarverticala" href="/html/blog.html">Blog</a></li>
+          <li class="navbarverticalli"><a class="navbarverticala" href="/index.html">Home</a></li>
+          <li class="navbarverticalli"><a class="navbarverticala" href="/html/news.html">News</a></li>
+          <li class="navbarverticalli"><a class="navbarverticala" href="/index.html#certs">Certs</a></li>
+          <li class="navbarverticalli"><a class="navbarverticala" href="/index.html#about">About</a></li>
+          <li class="navbarverticalli"><a class="navbarverticala" href="/html/blog.html">Blog</a></li>
         </ul>
       </header>
 
@@ -44,7 +44,9 @@
           <div class="blogimagetext">Easy Peasy</div>
         </div>
         <h1>Easy Peasy Writeup</h1>
-        <p class="blogtextcalenderdate"><i class="fa-solid fa-calendar-day"></i> August 22, 2020</p>
+        <p class="blogtextcalenderdate">
+          <i class="fa-solid fa-calendar-day"></i> August 22, 2020
+        </p>
         <p class="blogtext">
           In this write-up I show how to complete the
           <a href="https://tryhackme.com/room/easypeasyctf" class="linkstyle"
@@ -55,22 +57,47 @@
           vulnerable cronjob to escalate to root. Now lets get hacking!
         </p>
 
-        <p class="blogtableofcontenttitle" id="tableofcontent">Table of content</p>
+        <p class="blogtableofcontenttitle" id="tableofcontent">
+          Table of content
+        </p>
         <ol class="blogtableofcontent">
           <li><a href="#task1" class="blogtableofcontentitem">Task 1</a></li>
           <li><a href="#task2" class="blogtableofcontentitem">Task 2</a></li>
           <ol class="blogtableofcontentnestedlayerone">
-            <li><a href="#flag1" class="blogtableofcontentitemnestedlayerone">Flag 1</a></li>
-            <li><a href="#flag2" class="blogtableofcontentitemnestedlayerone">Flag 2</a></li>
-            <li><a href="#flag3" class="blogtableofcontentitemnestedlayerone">Flag 3</a></li>
-            <li><a href="#flag4" class="blogtableofcontentitemnestedlayerone">Flag 4</a></li>
+            <li>
+              <a href="#flag1" class="blogtableofcontentitemnestedlayerone"
+                >Flag 1</a
+              >
+            </li>
+            <li>
+              <a href="#flag2" class="blogtableofcontentitemnestedlayerone"
+                >Flag 2</a
+              >
+            </li>
+            <li>
+              <a href="#flag3" class="blogtableofcontentitemnestedlayerone"
+                >Flag 3</a
+              >
+            </li>
+            <li>
+              <a href="#flag4" class="blogtableofcontentitemnestedlayerone"
+                >Flag 4</a
+              >
+            </li>
           </ol>
-          <li><a href="#rootflag" class="blogtableofcontentitem">Root flag</a></li>
+          <li>
+            <a href="#rootflag" class="blogtableofcontentitem">Root flag</a>
+          </li>
         </ol>
 
         <p class="divider">. . .</p>
 
-        <h3 id="task1">Task 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
+        <h3 id="task1">
+          Task 1
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h3>
         <p class="blogtext">
           We start with running a basic nmap against all ports to see which
           services are running:
@@ -116,8 +143,18 @@
 
         <p class="divider">. . .</p>
 
-        <h3 id="task2">Task 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
-        <h4 id="flag1">Flag 1 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
+        <h3 id="task2">
+          Task 2
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h3>
+        <h4 id="flag1">
+          Flag 1
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h4>
         <p class="blogtext">
           I start on the web server running on port 80. Its showing the default
           ngingx page. Lets see if we can find any hidden directories using
@@ -171,7 +208,12 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag2">Flag 2 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
+        <h4 id="flag2">
+          Flag 2
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h4>
         <p class="blogtext">
           I’m guessing the second flag will be on the webserver running on port
           65524. By running another gobuster scan on this site, I spot the
@@ -201,7 +243,12 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag3">Flag 3 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
+        <h4 id="flag3">
+          Flag 3
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h4>
         <p class="blogtext">
           This one was rather easy. When looking though the source of the
           default apache page on port 65524, we find flag 3 in clear text:
@@ -215,7 +262,12 @@
 
         <p class="divider">. . .</p>
 
-        <h4 id="flag4">Flag 4 <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h4>
+        <h4 id="flag4">
+          Flag 4
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h4>
         <p class="blogtext">
           On the same page, we also find something else in the source code:
         </p>
@@ -309,7 +361,12 @@
 
         <p class="divider">. . .</p>
 
-        <h3 id="rootflag">Root flag <a href="#tableofcontent" class="linkstyle"><i class="fa-solid fa-caret-up"></i></a></h3>
+        <h3 id="rootflag">
+          Root flag
+          <a href="#tableofcontent" class="linkstyle"
+            ><i class="fa-solid fa-caret-up"></i
+          ></a>
+        </h3>
         <p class="blogtext">
           For this, I started with checking the crontab since the description of
           the room told us we were going to exploit a cron job. I check the
@@ -408,19 +465,6 @@
               >LinkedIn</a
             >
           </p>
-          <div class="copyrighttext">
-            Copyright &copy;
-            <span id="copyright">
-              <script>
-                document
-                  .getElementById("copyright")
-                  .appendChild(
-                    document.createTextNode(new Date().getFullYear())
-                  );
-              </script>
-            </span>
-            Owly. All Rights Reserved
-          </div>
         </div>
         <div class="footertextright">
           <p>
@@ -479,6 +523,17 @@
             location.reload();
           }
         </script>
+        <div class="copyrighttext">
+          Copyright &copy;
+          <span id="copyright">
+            <script>
+              document
+                .getElementById("copyright")
+                .appendChild(document.createTextNode(new Date().getFullYear()));
+            </script>
+          </span>
+          Owly. All Rights Reserved
+        </div>
       </footer>
     </div>
   </body>

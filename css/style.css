@@ -12,6 +12,7 @@ body {
   max-width: 750px;
   margin: 0 auto !important;
   float: none !important;
+  line-height: 1.25;
 }
 
 .normaldevider{
@@ -129,36 +130,6 @@ main {
   transition: 500ms ease-in-out;
 }
 
-/* navbarvertical */
-
-.navbarverticalul {
-  list-style-type: none;
-  margin: 10px;
-  padding: 0;
-  background-color: #b5e2ff;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 200px;
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  border-radius: 25px;
-  box-shadow: #b5e2ff 2px 2px 20px;
-}
-
-.navbarverticala{
-  display: block;
-  color: gray;
-  padding: 16px;
-  text-decoration: none;
-  transition: 500ms ease-in-out;
-}
-
-.navbarverticala:hover{
-  transition: 500ms ease-in-out;
-  transform: translatex(20px);
-}
 
 /* Link style */
 .linkstyle {
@@ -449,6 +420,36 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* navbarvertical */
+
+.navbarverticalul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  background-color: #b5e2ff;
+  position: fixed;
+  width: 200px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  border-radius: 25px;
+  box-shadow: #b5e2ff 2px 2px 20px;
+  transform: translatex(-15rem);
+}
+
+.navbarverticala{
+  display: block;
+  color: gray;
+  padding: 16px;
+  text-decoration: none;
+  transition: 500ms ease-in-out;
+}
+
+.navbarverticala:hover{
+  transition: 500ms ease-in-out;
+  transform: translatex(20px);
+}
+
 .backtotopbutton{
   background-color: #b5e2ff;
   border-width: 2px;
@@ -456,7 +457,8 @@ p {
   border-color: #b5e2ff;
   border-style: solid;
   color: grey;
-  padding: 15px 32px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -469,12 +471,13 @@ p {
   box-shadow: #b5e2ff 2px 2px 20px;
   position: fixed;
   bottom: 25px;
-  transform: translatex(-12.5rem);
+  transform: translatex(-15rem);
+  width: 200px;
 }
 
 .backtotopbutton:hover{
   transition: 500ms ease-in-out;
-  transform: translate(-12.5rem, -15px);
+  transform: translate(-15rem, -15px);
 }
 
 /* Contact form */
@@ -501,6 +504,7 @@ footer {
 }
 
 .copyrighttext {
+  clear: both;
   font-size: 16px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
@@ -570,4 +574,118 @@ footer {
   opacity: 0.5;
   text-decoration: none;
   pointer-events: none;
+}
+
+
+/* Media querrys */
+
+/* Blog navbar en back to top button */
+@media screen and (max-width: 1250px) {
+  .navbarverticalul{
+    position: relative;
+    transform: translatex(0rem);
+    overflow: hidden;
+    width: inherit;
+  }
+
+  .navbarverticalli{
+    float: left;
+  }
+  .navbarverticala{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .backtotopbutton{
+    position: relative;
+    transform: translatex(0rem);
+    overflow: hidden;
+    margin-top: 5rem;
+  }
+
+  .backtotopbutton:hover{
+    transform: translate(0rem, -15px);
+  }
+
+  .blogimage{
+    margin-top: 2rem;
+    max-width: 100%;
+    max-height: auto;
+    display:block;
+  }
+
+  .blogimagebanner{
+    max-width: 100%;
+    max-height: auto;
+    display:block;
+    min-width: 500px;
+  }
+}
+
+/* splitscreen */
+@media screen and (max-width: 800px) {
+  body {
+    max-width: 90%;
+  }
+}
+
+/* GSM */
+@media screen and (max-width: 600px) {
+
+  /* body */
+
+  body {
+    max-width: 90%;
+  }
+
+  /* Header */
+
+  .topnav {
+    position: relative;
+  }
+  .topnava {
+    display: block;
+    float: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .topnav-right {
+    float: none;
+  }
+
+  .topnav-centered{
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .imagecontainer{
+    text-align: center;
+  }
+
+  /* footer */
+
+  footer {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footertextright{
+    float: none;
+    text-align: center;
+  }
+
+  .footertextleft{
+    float: none;
+    text-align: center;
+  }
 }
