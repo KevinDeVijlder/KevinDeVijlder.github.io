@@ -20,13 +20,6 @@ body {
   margin-bottom: 5rem;
 }
 
-.footerline{
-  height: 5px;
-  border-width: 0;
-  background-color: #b5e2ff;
-  border-radius: 25px;
-}
-
 .customcontainer {
   display: flex;
   flex-direction: column;
@@ -100,10 +93,10 @@ main {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 33px;
-  padding-bottom: 33px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* Centered section inside the top navigation */
@@ -490,17 +483,61 @@ p {
 
 /* Footer */
 
-.footerline {
-  margin-top: 70px;
-  margin-bottom: 1rem;
-}
-
 footer {
+  margin-top: 5rem;
   font-size: 20px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
   color: grey;
   padding-bottom: 1rem;
+}
+
+.footericons{
+  text-align: center;
+}
+
+.footericon{
+  color: grey;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  transition: 500ms ease-in-out;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.footericon:hover{
+  color: #b5e2ff;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  transition: 500ms ease-in-out;
+}
+
+
+
+/* Darkmode button */
+.footericondarkmode{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+  color: grey;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  transition: 500ms ease-in-out;
+}
+
+.footericondarkmodebackground{
+  background-color: white;
+}
+
+.footericondarkmode:hover{
+  color: #b5e2ff;
+  transition: 500ms ease-in-out;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .copyrighttext {
@@ -509,19 +546,8 @@ footer {
   font-weight: bold;
   font-family: "Inconsolata", monospace;
   color: grey;
-}
-
-.footerlink {
-  margin-left: 0.5rem;
-}
-
-.footertextleft{
-  float: left;
-}
-
-.footertextright {
-  float: right;
-  text-align: right;
+  text-align: center;
+  margin-top: 0.75rem;
 }
 
 /* Scrollbar */
@@ -543,28 +569,6 @@ footer {
 
 *::-webkit-scrollbar-thumb:hover {
   background-color: #67b7ec;
-}
-
-/* Darkmode button */
-.darkmodebutton{
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  color: grey;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  padding: 0px;
-  margin: 0px;
-  transition: 500ms ease-in-out;
-}
-
-.darkmodebutton:hover{
-  color: #b5e2ff;
-  background-color: white;
-  transition: 500ms ease-in-out;
-  padding: 0px;
-  margin: 0px;
 }
 
 /* disabled links */
@@ -678,6 +682,21 @@ footer {
   }
 }
 
+/* Banner op blogposts */
+@media screen and (max-width: 549px) {
+  .blogimagebanner{
+    max-width: 100%;
+    max-height: auto;
+    display:block;
+    min-width: 200px;
+  }
+
+  .blogimagetext{
+    display: none;
+  }
+}
+
+/* footer op kleinste scherm */
 @media screen and (max-width: 350px) {
   .footertextright{
     float: none;

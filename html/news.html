@@ -87,57 +87,38 @@
       </main>
 
       <footer>
-        <hr class="footerline" />
-        <div class="footertextleft">
-          <p>Author: Owly</p>
-          <p>
-            <i class="fa-brands fa-github-alt"></i>
-            <a
-              href="https://github.com/KevinDeVijlder"
-              class="linkstyle footerlink"
-              >Github</a
-            >
-          </p>
-          <p>
-            <i class="fa-brands fa-twitter"></i>
-            <a
-              href="https://twitter.com/KevinVijlder"
-              class="linkstyle footerlink"
-              >Twitter</a
-            >
-          </p>
-          <p>
-            <i class="fa-brands fa-linkedin"></i>
-            <a
-              href="https://www.linkedin.com/in/kevindevijlder/"
-              class="linkstyle footerlink"
-              >LinkedIn</a
-            >
-          </p>
-        </div>
-        <div class="footertextright">
-          <p>
-            Theme
-            <button onclick="themeToggle()" class="darkmodebutton">
-              <i id="darkmodebuttonicon" class="fa-solid fa-moon"></i>
-            </button>
-          </p>
-          <p>
-            <a href="/files/owlysec_pgpkey.txt" class="linkstyle footerlink"
-              >Pgp Key</a
-            ><a
-              class="linkstyle"
-              href="/files/publickey.owlysec@protonmail.com-2238576897fca0f277d91ba196088a978fa71561.asc"
-              >(<i class="fa-solid fa-cloud-arrow-down"></i>)</a
-            >
-            <i class="fa-solid fa-key"></i>
-          </p>
-          <p>
-            <a href="mailto:owlysec@protonmail.com" class="linkstyle footerlink"
-              >Mail</a
-            >
-            <i class="fa-solid fa-envelope"></i>
-          </p>
+        <div class="footericons">
+          <a href="https://github.com/KevinDeVijlder" class="footericon"
+            ><i class="fa-brands fa-github-alt"></i
+          ></a>
+          <a href="https://twitter.com/KevinVijlder" class="footericon"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/kevindevijlder/"
+            class="footericon"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <button
+            onclick="themeToggle()"
+            class="footericondarkmode footericondarkmodebackground"
+          >
+            <i
+              id="darkmodebuttonicon"
+              class="fa-solid fa-circle-half-stroke"
+            ></i>
+          </button>
+          <a href="/files/owlysec_pgpkey.txt" class="footericon">
+            <i class="fa-solid fa-key"></i
+          ></a>
+          <a
+            class="footericon"
+            href="/files/publickey.owlysec@protonmail.com-2238576897fca0f277d91ba196088a978fa71561.asc"
+            ><i class="fa-solid fa-cloud-arrow-down"></i
+          ></a>
+          <a href="mailto:owlysec@protonmail.com" class="footericon">
+            <i class="fa-solid fa-envelope"></i
+          ></a>
         </div>
         <script>
           function loadcssfile(filename, filetype) {
@@ -157,8 +138,6 @@
 
             if (onpageLoad === "dark-mode") {
               loadcssfile("/css/darkmodestyle.css", "css");
-              document.getElementById("darkmodebuttonicon").className =
-                "fa-solid fa-sun";
             }
           })();
 
