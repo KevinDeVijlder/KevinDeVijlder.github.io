@@ -514,6 +514,16 @@ footer {
   transition: 500ms ease-in-out;
 }
 
+.footericonjump{
+  display: inline-block;
+  transition: 500ms ease-in-out;
+}
+
+.footericonjump:hover{
+  transition: 500ms ease-in-out;
+  transform: translateY(-15px);
+}
+
 
 
 /* Darkmode button */
