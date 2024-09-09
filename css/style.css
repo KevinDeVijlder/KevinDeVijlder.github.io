@@ -2,17 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* hexagon image */
-.hexagonimage {
-  max-width: 125px;
-}
-
 /* body width auto max width */
 body {
-  max-width: 750px;
+  max-width: 1000px;
   margin: 0 auto !important;
   float: none !important;
   line-height: 1.25;
+  background-color: #FFFFFF;
 }
 
 .normaldevider{
@@ -28,152 +24,119 @@ body {
 
 main {
   flex: 1;
+  margin-top: 2.5rem;
+}
+
+::selection {
+  color: white;
+  background: #B175FF;
 }
 
 /* Navbar */
-.topnav {
-  margin-top: 50px;
-  margin-bottom: 75px;
-  position: relative;
+.navbarul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  
 }
-
-/* Style the links inside the navigation bar */
-.topnava {
+.navbarli{
   float: left;
-  color: gray;
-  text-align: center;
-  padding-top: 135px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 16px;
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  transition: 500ms ease-in-out;
-  border-bottom: 2px solid white;
 }
 
-.topnava:hover {
-  color: gray;
-  border-bottom: 2px solid gray;
-  transition: 500ms ease-in-out;
-}
-
-/* Hexagon hover */
-
-.overlayhexagon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 500ms ease-in-out;
-}
-
-.imagecontainer:hover .overlayhexagon {
-  opacity: 1;
-  transition: 500ms ease-in-out;
-}
-
-.textinhexagon {
-  color: grey;
-  background-color: #b5e2ff;
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-/* Centered section inside the top navigation */
-.topnav-centered {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Right-aligned section inside the top navigation */
-.topnav-right {
+.narvbarliright{
   float: right;
+  margin-right: 1em;
 }
 
-.activepage{
-  color: #b5e2ff;
+.navbarlia{
+  margin-top: 67.5px;
+  margin-bottom: 67.5px;
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
-.activepage:hover{
-  color: #b5e2ff;
-  border-bottom: 2px solid #b5e2ff;
-  transition: 500ms ease-in-out;
+.navbarlia:hover{
+  color:#00ab44;
+}
+
+.current{
+  background: #00ab44;
+  color: #fff;
+  font-weight: 700;
+  border-color: #00ab44;
+  border-style: solid;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.current:hover{
+  color: #fff;
+  background-color: #333;
+}
+
+.navbarlogo{
+  border-radius: 50%;
+  height: 100px;
+  margin-top: 33.75px;
 }
 
 
 /* Link style */
 .linkstyle {
-  color: #b5e2ff;
+  color: #63d591;
   text-decoration: none;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
 }
 
 .linkstyle:hover {
-  color: #67b7ec;
+  color: #00ab44;
   text-decoration: none;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
 }
 
 /* Styling body text */
 h1 {
   font-size: 25px;
-  color: #b5e2ff;
+  color: grey;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 1rem;
-  text-shadow: #b5e2ff 2px 2px 30px;
 }
 
 h2{
   font-size: 22.5px;
-  color: #b5e2ff;
+  color: #242424;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 1rem;
-  text-shadow: #b5e2ff 2px 2px 30px;
 }
 
 h3{
   font-size: 22.5px;
   font-weight: bold;
-  color: grey;
-  font-family: "Inconsolata", monospace;
+  color: #242424;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 1rem;
-  text-shadow: grey 2px 2px 30px;
 }
 
 h4{
   font-size: 20px;
   font-weight: bold;
-  color: grey;
-  font-family: "Inconsolata", monospace;
+  color: #242424;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 1rem;
-  text-shadow: grey 2px 2px 30px;
 }
 
 p {
@@ -185,7 +148,7 @@ p {
   font-size: 20px;
   color: grey;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Raleway', sans-serif;
 }
 
 .line {
@@ -196,7 +159,49 @@ p {
 .aboutmetext {
   font-size: 20px;
   color: grey;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Cards certs */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 32.5px;
+}
+
+.grid-item {
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: grey;
+  font-family: 'Inter', sans-serif;
+  box-shadow: rgb(230, 229, 229) 0px 0px 50px;
+}
+
+.grid-item img {
+  width: 125px;
+  height: auto;
+  
+}
+
+.grid-item h3 {
+  font-size: 25px;
+  color: grey;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.grid-item p {
+  font-size: 22px;
+  color: grey;
+  font-family: 'Inter', sans-serif;
 }
 
 /* News page */
@@ -211,283 +216,24 @@ p {
 .newstext{
   font-size: 20px;
   color: grey;
-  font-family: "Inconsolata", monospace;
-}
-
-/* Blog page */
-
-.blogtextcalenderdate{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-}
-
-.blogtableofcontenttitle{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-  margin-top: 1.5rem;
-}
-
-.blogtableofcontent{
-  list-style: lower-greek;
-  margin-left: 2rem;
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-}
-
-.blogtableofcontentitem{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 500ms ease-in-out;
-}
-
-.blogtableofcontentitem:hover{
-  color: #b5e2ff;
-  transition: 500ms ease-in-out;
-}
-
-.blogtableofcontentnestedlayerone{
-  list-style: lower-roman;
-  margin-left: 2rem;
-  font-size: 17.5px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-}
-
-.blogtableofcontentitemnestedlayerone{
-  font-size: 17.5px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 500ms ease-in-out;
-}
-
-.blogtableofcontentitemnestedlayerone:hover{
-  color: #b5e2ff;
-  transition: 500ms ease-in-out;
-}
-
-.bloganouncement{
-  margin-bottom: 3rem;
-  padding: 20px;
-  box-shadow: lightgrey 0px 0px 20px;
-  border-radius: 15px;
-}
-
-.bloganouncementtext{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-}
-
-.bloganouncementbutton{
-  background-color: #b5e2ff;
-  border-width: 2px;
-  border-radius: 50px;
-  border-color: #b5e2ff;
-  border-style: solid;
-  color: grey;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 500ms ease-in-out;
-  box-shadow: #b5e2ff 2px 2px 20px;
-}
-
-.bloganouncementbutton:hover{
-  transition: 500ms ease-in-out;
-  transform: translatey(-15px);
-}
-
-.blogannoucementcontent{
-  display: none;
-}
-
-#blogannoucementloadmore{
-  text-decoration: none;
-  font-size: 20px;
-  font-family: "Inconsolata", monospace;
-  color: grey;
-  font-weight: bold;
-  transition: 500ms ease-in-out;
-  text-shadow: grey 2px 2px 15px;
-}
-
-#blogannoucementloadmore:hover{
-  color: #b5e2ff;
-  transition: 500ms ease-in-out;
-  text-shadow: #b5e2ff 2px 2px 15px;
-}
-
-.blogannoucementnocontent {
-  color: grey !important;
-  background-color: transparent !important;
-  pointer-events: none;
-}
-
-/* Individual blog text */
-.blogimagecontainer {
-  position: relative;
-  text-align: center;
-  margin-bottom: 5rem;
-  margin-top: 10px;
-}
-
-.blogimagebanner{
-  border-radius: 50px;
-  box-shadow: #b5e2ff 2px 2px 20px;
-}
-
-.blogimagetext {
-  position: absolute;
-  top: 60px;
-  left: 25px;
-  font-size: 50px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-}
-
-.blogtext{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-}
-
-.blogtexthighlight{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.divider {
-  color: grey;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.blogimage{
-  margin-top: 2.5rem;
-  max-width: 750px;
-  max-height: auto;
-  display:block;
-}
-
-.blogimagealt{
-  font-size: 15px;
-  font-weight: bold;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  margin-bottom: 2.5rem;
-}
-
-.blogtextquestion{
-  font-size: 20px;
-  color: grey;
-  font-family: "Inconsolata", monospace;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* navbarvertical */
-
-.navbarverticalul {
-  list-style-type: none;
-  margin: 10px;
-  padding: 0;
-  background-color: #b5e2ff;
-  position: fixed;
-  width: 200px;
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  border-radius: 25px;
-  box-shadow: #b5e2ff 2px 2px 20px;
-  transform: translatex(-15rem);
-}
-
-.navbarverticala{
-  display: block;
-  color: gray;
-  padding: 16px;
-  text-decoration: none;
-  transition: 500ms ease-in-out;
-}
-
-.navbarverticala:hover{
-  transition: 500ms ease-in-out;
-  transform: translatex(20px);
-}
-
-.backtotopbutton{
-  background-color: #b5e2ff;
-  border-width: 2px;
-  border-radius: 50px;
-  border-color: #b5e2ff;
-  border-style: solid;
-  color: grey;
-  padding-top: 7.5px;
-  padding-bottom: 7.5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Inconsolata", monospace;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 500ms ease-in-out;
-  box-shadow: #b5e2ff 2px 2px 20px;
-  position: fixed;
-  bottom: 25px;
-  transform: translatex(-15rem);
-  width: 200px;
-}
-
-.backtotopbutton:hover{
-  transition: 500ms ease-in-out;
-  transform: translate(-15rem, -15px);
+  font-family: 'Inter', sans-serif;
 }
 
 /* Contact form */
 .contacttext{
   font-size: 20px;
   color: grey;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
 
 /* Footer */
 
 footer {
-  margin-top: 5rem;
-  font-size: 20px;
+  margin-top: 2rem;
+  font-size: 30px;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   color: grey;
   padding-bottom: 1rem;
 }
@@ -501,16 +247,16 @@ footer {
   text-decoration: none;
   font-size: 30px;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
 
 .footericon:hover{
-  color: #b5e2ff;
+  color: #00ab44;
   text-decoration: none;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
 }
 
@@ -519,18 +265,12 @@ footer {
   transition: 500ms ease-in-out;
 }
 
-.footericonjump:hover{
-  transition: 500ms ease-in-out;
-  transform: translateY(-15px);
-}
-
-
 
 /* Darkmode button */
 .footericondarkmode{
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   color: grey;
   border: none;
   cursor: pointer;
@@ -544,7 +284,7 @@ footer {
 }
 
 .footericondarkmode:hover{
-  color: #b5e2ff;
+  color: #00ab44;
   transition: 500ms ease-in-out;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -552,9 +292,9 @@ footer {
 
 .copyrighttext {
   clear: both;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Inter', sans-serif;
   color: grey;
   text-align: center;
   margin-top: 0.75rem;
@@ -574,11 +314,11 @@ footer {
   border-radius: 8px;
   border: 4px solid transparent;
   background-clip: content-box;
-  background-color: #b5e2ff;
+  background-color: grey;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #67b7ec;
+  background-color: #00ab44;
 }
 
 /* disabled links */

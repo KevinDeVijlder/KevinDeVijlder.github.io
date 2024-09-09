@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/css/resetcss.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Inter&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&family=Space+Grotesk&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -21,47 +24,28 @@
     <link rel="stylesheet" href="/css/resetcss.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Owly's tree | Home</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   </head>
   <body>
     <div class="customcontainer">
       <header>
-        <div class="topnav">
-          <!-- Centered link -->
-          <div class="topnav-centered">
-            <div class="imagecontainer">
-              <a href="/index.html" class="hexagonimagehover"
-                ><img
-                  class="hexagonimage"
-                  src="/images/owly_hexagon.png"
-                  alt="Profile picture"
-                />
-                <div class="overlayhexagon">
-                  <div class="textinhexagon">Home</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Left-aligned links (default) -->
-          <a href="/html/news.html" class="topnava">News</a>
-          <a href="#certs" class="topnava">Certs</a>
-
-          <!-- Right-aligned links -->
-          <div class="topnav-right">
-            <a href="#about" class="topnava">About</a>
-            <a href="/html/blog.html" class="topnava">Blog</a>
-          </div>
-        </div>
+        <ul class="navbarul">
+          <li class="navbarli"><a class="" href="/"><img class="navbarlogo" src="/images/profilepic.png" alt="navbar logo"></a></li>
+          <li class="narvbarliright"><a class="navbarlia current" href="/">Home</a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="/html/news.html">News</a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="#about">About</a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="#certs">Certifications</a></li>
+        </ul>
       </header>
 
       <main>
         <h1>Welcome to owly's tree</h1>
         <p class="welcometext">
-          Welcome to my personal website! Here you can find my
-          <a href="/html/blog.html" class="linkstyle">Blog</a>
-          (including writeups), more information about me, some security related
-          news and a contact form. Enjoy!
+          Welcome to my personal website! You can find out more about me, the certifications 
+          I obtain and my general experience in the cyber security world. I also have a 
+          <a href="https://medium.com/@kevin.de.vijlder" class="linkstyle">Blog</a> where you can find
+          write-ups on CTF's and other security related articles that I write. 
         </p>
 
         <div class="normaldevider"></div>
@@ -69,23 +53,20 @@
         <h1 id="about">About me</h1>
         <p class="aboutmetext">
           Hey there! My name is Kevin, although I much prefer my screenname
-          "Owly". I am a student at the University of Applied Computer Sciences
-          in Leuven, Belgium. I am currently studying Software Engineering,
-          although my dream is to work in the cyber security space.
+          "Owly". I am a cyber security professional, experienced in penetration testing and application security. 
         </p>
         <p class="aboutmetext">
-          I have some experience in pentesting and other security related fields
-          thanks to
+          Thanks to
           <a href="https://tryhackme.com/p/Owly" class="linkstyle">TryHackMe</a>
           and
-          <a href="https://app.hackthebox.com/home" class="linkstyle"
+          <a href="https://app.hackthebox.com/profile/381061" class="linkstyle"
             >HackTheBox</a
-          >. I also work on writeups and tutorials on my own. Be sure to check
+          > I was able to build a solid foundation. I also work on writeups and tutorials on my own. Be sure to check
           them out on my blog page.
         </p>
         <p class="aboutmetext">
-          Besides being an it student, I am also a big lover of movies & tv
-          shows. And im crazy about animals. In some other life, I definitly
+          In my free time I love to watch movies and tv shows.
+          And im crazy about animals. In some other life, I definitly
           would have been a vet ;). Lastly, good food will always be apreciated.
         </p>
         <p class="aboutmetext">
@@ -98,14 +79,49 @@
             class="linkstyle footerlink"
             >LinkedIn</a
           >
-          or just contact me by using the form below.
+          .
         </p>
 
         <div class="normaldevider"></div>
         
-        <h1 id="certs">Certification</h1>
-        <p class="contacttext">Here you can find my certifications</p>
-        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8f089286-6e23-421f-ada5-6be40ad95f6f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        <h1 id="certs">Certifications</h1>
+        <p class="contacttext">Here you can find my current certifications, as well as my future goals</p>
+        <div class="normaldevider"></div>
+        <div class="grid-container">
+          <a href="https://www.credly.com/badges/8f089286-6e23-421f-ada5-6be40ad95f6f/public_url" class="grid-item">
+            <img src="images/certificate_badge_sc900.png" alt="Badge sc 900 certificate">
+            <h3>SC-900</h3>
+            <p>Microsoft Security, Compliance, and Identity Fundamentals</p>
+          </a>
+          <a href="https://verified.elearnsecurity.com/certificates/c5ce645f-481c-406f-b787-1e4b033a8272" class="grid-item">
+            <img src="images/certificate_badge_eWPT.png" alt="Square Image">
+            <h3>eWPT</h3>
+            <p>eLearnSecurity Web application Penetration Tester</p>
+          </a>
+          <a href="#" class="grid-item">
+            <img src="images/certificate_badge_eWPTx.png" alt="Square Image">
+            <h3>eWPTx</h3>
+            <p>In progress, studying right now for this one, goal is by end of 2023</p>
+          </a>
+          <a href="#" class="grid-item">
+            <img src="images/certificate_badge_cptsT.png" alt="Square Image">
+            <h3>CPTS</h3>
+            <p>In the future</p>
+          </a>
+          <a href="#" class="grid-item">
+            <img src="images/certificate_badge_OSCP.png" alt="Square Image">
+            <h3>OSCP</h3>
+            <p>In the future</p>
+          </a>
+          <a href="#" class="grid-item">
+            <img src="images/certificate_badge_OSWE.png" alt="Square Image">
+            <h3>OSWE</h3>
+            <p>In the future</p>
+          </a>
+          <!-- Repeat the above structure for other grid items -->
+        </div>
+
+        <hr style="width:100%; height: 5px; margin-top: 6rem;" color="#00ab44">
       </main>
 
       <footer>

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/css/resetcss.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Inter&family=Open+Sans&family=Roboto&family=Source+Code+Pro:wght@500&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
@@ -20,38 +24,19 @@
     <link rel="stylesheet" href="/css/resetcss.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Owly's tree | News</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   </head>
   <body>
     <div class="customcontainer">
       <header>
-        <div class="topnav">
-          <!-- Centered link -->
-          <div class="topnav-centered">
-            <div class="imagecontainer">
-              <a href="/index.html" class="hexagonimagehover"
-                ><img
-                  class="hexagonimage"
-                  src="/images/owly_hexagon.png"
-                  alt="Profile picture"
-                />
-                <div class="overlayhexagon">
-                  <div class="textinhexagon">Home</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Left-aligned links (default) -->
-          <a href="/html/news.html" class="topnava activepage">News</a>
-          <a href="/index.html#certs" class="topnava">Certs</a>
-
-          <!-- Right-aligned links -->
-          <div class="topnav-right">
-            <a href="/index.html#about" class="topnava">About</a>
-            <a href="/html/blog.html" class="topnava">Blog</a>
-          </div>
-        </div>
+        <ul class="navbarul">
+          <li class="navbarli"><a class="" href="/"><img class="navbarlogo" src="/images/profilepic.png" alt="navbar logo"></a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="/">Home</a></li>
+          <li class="narvbarliright"><a class="navbarlia current" href="/html/news.html">News</a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="#about">About</a></li>
+          <li class="narvbarliright"><a class="navbarlia" href="#certs">Certifications</a></li>
+        </ul>
       </header>
 
       <main>
@@ -63,13 +48,34 @@
         <div class="normaldevider"></div>
 
         <div class="newsarticle">
+          <h2>Moved to Sopra Steria as a penetration tester</h2>
+          <p class="newstext">
+            <i class="fa-solid fa-calendar-day"></i> September 1, 2024
+          </p>
+          <p class="newstext">
+            As of today, Ordina was officialy merged with Sopra Steria. 
+            I am now working fulltime as a penetration tester in the Sopra Steria Benelux Red Team.
+          </p>
+        </div>
+
+        <div class="newsarticle">
+          <h2>Started as a Cyber Security Consultant</h2>
+          <p class="newstext">
+            <i class="fa-solid fa-calendar-day"></i> September 1, 2022
+          </p>
+          <p class="newstext">
+            I started working as a cyber security consultant at Ordina Belgium.
+          </p>
+        </div>
+
+        <div class="newsarticle">
           <h2>Started my blog</h2>
           <p class="newstext">
             <i class="fa-solid fa-calendar-day"></i> March 20, 2022
           </p>
           <p class="newstext">
             I officialy started my blog! From now on I will post all kinds of
-            thoughts and other stuff on this website!
+            thoughts and other stuff on my <a href="https://medium.com/@kevin.de.vijlder" class="linkstyle">Medium</a> page
           </p>
         </div>
 

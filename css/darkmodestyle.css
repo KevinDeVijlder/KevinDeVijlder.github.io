@@ -1,10 +1,10 @@
 body {
-    background-color: rgb(50, 50, 50);
+    background-color: #1F2430;
     color: white;
   }
   
   .footericondarkmode{
-    background-color: rgb(50, 50, 50);
+    background-color: #1F2430;
   }
 
   .topnava {
@@ -20,5 +20,16 @@ body {
   }
 
   .footericondarkmode:hover{
-    background-color: rgb(50, 50, 50);
+    background-color: #1F2430;
+    color: #00ab44;
   }
+
+  .footericon:hover{
+    color: #00ab44;
+  }
+
+  .grid-item {
+    background-color: #353f55;
+    box-shadow: #353f55 0px 0px 50px;
+  }
+  
