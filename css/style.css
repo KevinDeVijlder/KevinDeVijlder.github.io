@@ -16,6 +16,11 @@ body {
   margin-bottom: 5rem;
 }
 
+.smalldevider{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .customcontainer {
   display: flex;
   flex-direction: column;
@@ -53,7 +58,7 @@ main {
   margin-top: 67.5px;
   margin-bottom: 67.5px;
   display: block;
-  color: #333;
+  color: grey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -81,7 +86,7 @@ main {
 
 .current:hover{
   color: #fff;
-  background-color: #333;
+  background-color: grey;
 }
 
 .navbarlogo{
@@ -93,14 +98,14 @@ main {
 
 /* Link style */
 .linkstyle {
-  color: #63d591;
+  color: #00ab44;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
 }
 
 .linkstyle:hover {
-  color: #00ab44;
+  color: #008435;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   transition: 500ms ease-in-out;
@@ -273,14 +278,12 @@ footer {
 
 /* Darkmode button */
 .footericondarkmode{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   font-family: 'Inter', sans-serif;
   color: grey;
   border: none;
   cursor: pointer;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
   transition: 500ms ease-in-out;
 }
 
@@ -291,8 +294,6 @@ footer {
 .footericondarkmode:hover{
   color: #00ab44;
   transition: 500ms ease-in-out;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
 }
 
 .copyrighttext {
