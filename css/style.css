@@ -339,36 +339,6 @@ footer {
 
 /* Media querrys */
 
-/* Blog navbar en back to top button */
-@media screen and (max-width: 1250px) {
-  .navbarverticalul{
-    position: relative;
-    transform: translatex(0rem);
-    overflow: hidden;
-    width: inherit;
-  }
-
-  .navbarverticalli{
-    float: left;
-  }
-  .navbarverticala{
-    display: block;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  .backtotopbutton{
-    position: relative;
-    transform: translatex(0rem);
-    overflow: hidden;
-    margin-top: 5rem;
-  }
-
-  .backtotopbutton:hover{
-    transform: translate(0rem, -15px);
-  }
-}
-
 /* splitscreen */
 @media screen and (max-width: 800px) {
   body {
@@ -412,6 +382,18 @@ footer {
   }
   .imagecontainer{
     text-align: center;
+  }
+
+  /* Grid container */
+
+  .grid-container {
+    display: block; 
+  }
+
+  .grid-item {
+    height: auto; /* Let the height adjust based on content */
+    aspect-ratio: auto;
+    margin-bottom: 10px; /* Add some spacing between items */
   }
 
   /* footer */
