@@ -186,6 +186,11 @@ p {
   box-shadow: rgb(230, 229, 229) 0px 0px 50px;
 }
 
+.grid-item-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .grid-item img {
   width: 50px;
   height: auto;
