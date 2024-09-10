@@ -367,20 +367,6 @@ footer {
   .backtotopbutton:hover{
     transform: translate(0rem, -15px);
   }
-
-  .blogimage{
-    margin-top: 2rem;
-    max-width: 100%;
-    max-height: auto;
-    display:block;
-  }
-
-  .blogimagebanner{
-    max-width: 100%;
-    max-height: auto;
-    display:block;
-    min-width: 500px;
-  }
 }
 
 /* splitscreen */
@@ -431,36 +417,12 @@ footer {
   /* footer */
 
   footer {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-  }
-}
-
-/* Banner op blogposts */
-@media screen and (max-width: 549px) {
-  .blogimagebanner{
-    max-width: 100%;
-    max-height: auto;
-    display:block;
-    min-width: 200px;
-  }
-
-  .blogimagetext{
-    display: none;
-  }
-}
-
-/* footer op kleinste scherm */
-@media screen and (max-width: 350px) {
-  .footertextright{
-    float: none;
     text-align: center;
   }
 
-  .footertextleft{
-    float: none;
-    text-align: center;
+  .footericonjump{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
   }
 }
