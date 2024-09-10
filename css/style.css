@@ -347,7 +347,7 @@ footer {
 }
 
 /* GSM */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
   /* body */
 
@@ -357,31 +357,30 @@ footer {
 
   /* Header */
 
-  .topnav {
-    position: relative;
-  }
-  .topnava {
-    display: block;
-    float: none;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 0px;
-    padding-right: 0px;
+  .navbarul {
+    display: flex;
+    flex-direction: column; /* Stack the navbar items */
+    align-items: center; /* Center the navbar items */
+    padding: 0;
   }
 
-  .topnav-right {
-    float: none;
+  .navbarli, .narvbarliright {
+    float: none; /* Remove floating */
+    width: 100%; /* Make items full width */
+    text-align: center; /* Center the text */
+    margin: 10px 0; /* Add some margin between items */
   }
 
-  .topnav-centered{
-    float: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
+  .navbarlia {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    padding: 15px 0; /* Adjust padding */
+    margin: 0; /* Remove extra margins */
   }
-  .imagecontainer{
-    text-align: center;
+
+  .navbarlogo {
+    height: 80px; /* Reduce logo size */
+    margin-top: 20px; /* Adjust top margin for logo */
+    margin-bottom: 10px;
   }
 
   /* Grid container */
