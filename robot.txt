@@ -1,0 +1,3 @@
+# Keep out the robots
+User-agent: *
+Disallow: /
