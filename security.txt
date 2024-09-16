@@ -1,0 +1,14 @@
+# My security adres
+Contact: mailto:kevin.de.vijlder@protonmail.com
+
+# Date of expiration 
+Expires: 2034-01-01T11:00:00.000Z
+
+# My PGP key
+Encryption: https://kevindevijlder.github.io/files/KevinDeVijlder_Pgp_key.txt
+
+# Languages
+Preferred-Languages: en,nl
+
+# Location
+Canonical: https://kevindevijlder.github.io/security.txt
