@@ -1,5 +1,5 @@
 # My security adres
-Contact: mailto:kevin.de.vijlder@protonmail.com
+Contact: mailto:owlysec@protonmail.com
 
 # Date of expiration 
 Expires: 2034-01-01T11:00:00.000Z
