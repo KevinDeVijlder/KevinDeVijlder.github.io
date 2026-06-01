@@ -43,6 +43,10 @@ img {
   padding: 48px 0;
 }
 
+section[id] {
+  scroll-margin-top: 96px;
+}
+
 .header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(11, 18, 32, 0.95);
@@ -69,6 +73,7 @@ img {
   height: 50px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.16);
+  transform: scaleX(-1);
 }
 
 .brand-name {
@@ -105,12 +110,13 @@ img {
   padding: 10px 14px;
   border-radius: 999px;
   color: var(--accent);
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .nav-cta:hover {
-  background: rgba(97, 58, 190, 0.12);
-  color: var(--accent-dark);
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .hero {
