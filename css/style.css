@@ -294,6 +294,10 @@ section[id] {
   line-height: 1.8;
 }
 
+.card-copy p + p {
+  margin-top: 18px;
+}
+
 .timeline-section {
   padding-top: 72px;
 }
