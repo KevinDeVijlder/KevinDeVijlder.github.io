@@ -260,6 +260,25 @@ section[id] {
   gap: 14px;
 }
 
+.panel-quote {
+  margin: 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+  font-style: italic;
+}
+
+.panel-quote p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.panel-quote footer {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .panel-card-accent {
   background: rgba(97, 58, 190, 0.12);
   border-color: rgba(97, 58, 190, 0.2);
