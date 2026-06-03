@@ -166,16 +166,16 @@ section[id] {
 }
 
 .nav-cta {
-  border: 1px solid var(--accent);
-  padding: 10px 14px;
+  background: var(--accent);
+  padding: 10px 16px;
   border-radius: 999px;
-  color: var(--accent);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  border: 1px solid rgba(97, 58, 190, 0.95);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .nav-cta:hover {
   background: var(--accent);
-  color: #fff;
+  box-shadow: 0 12px 28px rgba(97, 58, 190, 0.2);
   transform: translateY(-1px);
 }
 
@@ -549,6 +549,55 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
+}
+
+.contact-copy {
+  margin: 0 0 28px;
+  color: var(--muted);
+  max-width: 760px;
+  line-height: 1.8;
+}
+
+.contact-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, rgba(97, 58, 190, 0.2), rgba(11, 18, 32, 0.94));
+  border: 1px solid rgba(97, 58, 190, 0.28);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+  padding: 40px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #613abe, #7b5dfc);
+  color: #fff;
+  padding: 18px 22px;
+  border: none;
+}
+
+.button-secondary {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+  border: none;
+  color: #fff;
+  padding: 18px 22px;
 }
 
 .footer-name {
