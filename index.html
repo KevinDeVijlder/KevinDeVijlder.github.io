@@ -3,63 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kevin “Owly” De Vijlder</title>
+    <title>Kevin “Owly” De Vijlder — Cybersecurity Specialist</title>
     <link rel="icon" href="/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/resetcss.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <header class="header">
-      <div class="section container header-inner">
+      <div class="container header-inner">
         <div class="brand">
           <a href="#profile-pic-modal" class="brand-avatar-link" aria-label="Open profile picture">
             <img src="/images/profilepic.png" alt="Kevin De Vijlder" class="brand-avatar" />
           </a>
-          <div>
-            <p class="brand-name">Kevin De Vijlder | Owly</p>
-            <p class="brand-role">Cyber security specialist</p>
+          <div class="brand-identity">
+            <p class="brand-name">Kevin De Vijlder <span class="brand-handle">Owly</span></p>
+            <p class="brand-role">Cybersecurity Specialist</p>
           </div>
         </div>
         <nav class="nav">
           <a href="#about">About</a>
+          <a href="#projects">Projects</a>
           <a href="#timeline">Certifications</a>
-          <a href="/files/KevinDeVijlder_Pgp_key.txt" class="nav-cta">PGP</a>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+          <a href="#contact">Contact</a>
+          <a href="/files/KevinDeVijlder_Pgp_key.txt" class="nav-cta">PGP Key</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="section hero">
-        <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Cyber security</p>
-            <h1>Prioritizing a practical cybersecurity mindset.</h1>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy-wrap">
+            <span class="pill-badge">Cybersecurity &amp; Threat Research</span>
+            <h1>Prioritizing a <span class="text-blue">practical cybersecurity</span> mindset.</h1>
             <p class="hero-copy">
-              A cyber security specialist focused on protecting businesses and individuals 
-              from cyber threats and conducting cybersecurity research.</p>
+              Protecting businesses and individuals from modern cyber threats through offensive and defensive security, vulnerability research, and open-source intelligence.
+            </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="https://medium.com/@kevin.de.vijlder">Blog</a>
-              <a class="button button-secondary" href="#contact">Contact</a>
-            </div>
-          </div>
-          <div class="hero-panel">
-            <div class="panel-card">
-              <p class="panel-label">Current focus</p>
-              <blockquote class="panel-quote">
-                <p>“Making cyberspace safer, one byte at a time”</p>
-                <footer>— Owly</footer>
-              </blockquote>
-            </div>
-            <div class="panel-card panel-card-accent">
-              <p class="panel-label">PGP key</p>
-              <a href="/files/KevinDeVijlder_Pgp_key.txt">View key</a>
-              <a href="/files/publickey.Kevin.De.Vijlder@protonmail.com-97a65fb2c9a31795292c6517664cf0c3cb0f7418.asc">Download</a>
+              <a class="button button-primary" href="https://www.linkedin.com/in/kevindevijlder/" target="_blank" rel="noreferrer">
+                Connect on LinkedIn
+              </a>
+              <a class="button button-secondary" href="#projects">Explore Projects</a>
+              <a class="button button-secondary" href="https://medium.com/@kevin.de.vijlder" target="_blank" rel="noreferrer">Read Blog</a>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Profile Picture Lightbox Modal -->
       <div id="profile-pic-modal" class="image-modal" aria-hidden="true">
         <a href="#" class="image-modal-backdrop" aria-label="Close profile picture"></a>
         <div class="image-modal-content">
@@ -68,342 +71,303 @@
         </div>
       </div>
 
-      <section id="about" class="section container card">
-        <div class="card-copy">
-          <h2>About</h2>
-          <p>
-            I'm Kevin, also known as Owly, a cybersecurity specialist with a passion for understanding 
-            how systems work, identifying weaknesses, and helping make the digital world a safer place. 
-            My interests span across offensive and defensive security, continuous learning, 
-            and staying up to date with the ever-evolving cybersecurity landscape.
-          </p>
-          <p>
-            Outside of my professional work, I actively invest time in developing my skills 
-            through hands-on labs and practical challenges. I regularly use platforms such as 
-            TryHackMe and Hack The Box to sharpen my technical abilities, explore new attack techniques, 
-            and gain deeper insight into real-world security scenarios. 
-            I also enjoy documenting my learning journey by publishing write-ups and 
-            technical articles on Medium, where I share lessons learned, walkthroughs, 
-            and cybersecurity insights with the broader community.
-          </p>
-          <p>
-            I believe that cybersecurity is a field where curiosity and continuous improvement are essential. 
-            Whether I'm researching a new vulnerability, building a home lab, 
-            or experimenting with security tools and technologies, I'm always looking for opportunities 
-            to learn something new and expand my knowledge.
-          </p>
-          <p>
-            When I'm away from the keyboard, you'll usually find me exploring nature on a hiking trail, 
-            enjoying movies and TV shows on my home theater setup, or experimenting in the kitchen. 
-            I have a particular appreciation for good food and enjoy cooking meals from scratch.
-          </p>
-        </div>
-      </section>
-
-      <section id="timeline" class="section container timeline-section">
+      <!-- Apple-Style Bento Grid About Section -->
+      <section id="about" class="section container">
         <div class="section-heading">
-          <p class="eyebrow">Milestones</p>
-          <h2>Certifications & progress</h2>
+          <p class="eyebrow">Overview</p>
+          <h2>About me</h2>
         </div>
-        <div class="timeline">
-          <article class="timeline-entry timeline-working">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/comptia.webp" alt="CompTIA logo">
+
+        <div class="bento-grid">
+          <div class="bento-card bento-main">
+            <h3>Security through curiosity and continuous learning.</h3>
+            <p>
+              I'm Kevin, also known as <strong>Owly</strong>, a cybersecurity specialist with a passion for understanding how systems work, identifying weaknesses, and helping make the digital world a safer place. My interests span across offensive and defensive security, continuous learning, and staying up to date with the ever-evolving cybersecurity landscape.
+            </p>
+            <p>
+              Outside of my professional work, I actively invest time in developing my skills through hands-on labs and practical challenges on <strong>TryHackMe</strong> and <strong>Hack The Box</strong> to sharpen my technical abilities, explore new attack techniques, and gain deeper insight into real-world security scenarios.
+            </p>
+            <p>
+              I also document my learning journey by publishing write-ups and technical articles on <strong>Medium</strong>, sharing lessons learned, walkthroughs, and cybersecurity insights with the broader community.
+            </p>
+            <div class="skill-tags">
+              <span>Penetration Testing</span>
+              <span>Defensive Security</span>
+              <span>OSINT &amp; Threat Intel</span>
+              <span>Application Security</span>
+              <span>Cloud Security</span>
+              <span>Vulnerability Research</span>
+            </div>
+          </div>
+
+          <div class="bento-side">
+            <div class="bento-card bento-quote-card">
+              <p class="bento-label">Philosophy</p>
+              <blockquote class="bento-quote">
+                <p>“Making cyberspace safer, one byte at a time.”</p>
+                <footer>— Owly</footer>
+              </blockquote>
+            </div>
+
+            <div class="bento-card bento-pgp-card">
+              <p class="bento-label">Encrypted Communication</p>
+              <h3>PGP Public Key</h3>
+              <p class="pgp-fingerprint">97A6 5FB2 C9A3 1795 292C 6517 664C F0C3 CB0F 7418</p>
+              <div class="pgp-actions">
+                <a class="link-arrow" href="/files/KevinDeVijlder_Pgp_key.txt">View key →</a>
+                <a class="link-arrow" href="/files/publickey.Kevin.De.Vijlder@protonmail.com-97a65fb2c9a31795292c6517664cf0c3cb0f7418.asc">Download .asc →</a>
               </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>CompTIA Security+</h3>
-                  </div>
-                  <span class="timeline-status">In Progress</span>
+            </div>
+
+            <div class="bento-card bento-personal-card">
+              <p class="bento-label">Beyond the Keyboard</p>
+              <p>
+                When I'm offline, you'll usually find me exploring nature on a hiking trail, enjoying movies on my home theater setup, or cooking meals from scratch in the kitchen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section id="projects" class="section container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects &amp; research</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card project-featured">
+            <div class="project-featured-content">
+              <div>
+                <span class="pill-badge pill-badge-sm">Featured Open Source</span>
+                <h3>Threatmap</h3>
+                <p class="project-lead">
+                  Real-time, hardware-accelerated 2D global cyber threat visualizer powered by live Open-Source Intelligence.
+                </p>
+                <p class="project-body">
+                  Built for Security Operations Center (SOC) displays and threat monitoring. Threatmap ingests live OSINT feeds from <strong>abuse.ch Feodo Tracker</strong> and <strong>ThreatFox</strong>, geolocates active Botnet C2 servers and malware hosts, and streams real-time trajectory arcs over WebSockets.
+                </p>
+                <div class="project-tags">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>WebSockets</span>
+                  <span>D3.js</span>
+                  <span>HTML5 Canvas</span>
+                  <span>OSINT</span>
                 </div>
-                <p>Working toward core cybersecurity fundamentals and exam readiness.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">CompTIA</span>
-                  <span class="timeline-tag">Core Skills</span>
-                </div>
+              </div>
+              <div class="project-cta-row">
+                <a class="button button-primary" href="https://github.com/KevinDeVijlder/Threatmap" target="_blank" rel="noreferrer">
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="project-metrics">
+              <div class="metric-box">
+                <span class="metric-value">60 FPS</span>
+                <span class="metric-label">Hardware-accelerated HTML5 Canvas &amp; D3 vector rendering</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-value">Live OSINT</span>
+                <span class="metric-label">Real-time abuse.ch Feodo Tracker &amp; ThreatFox ingestion</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-value">Triage Pivots</span>
+                <span class="metric-label">Direct lookups for VirusTotal, Shodan, AbuseIPDB &amp; MITRE</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-value">Instant Export</span>
+                <span class="metric-label">One-click IOC copy and captured session JSON / CSV export</span>
               </div>
             </div>
           </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/SEC1.pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/sec01-tryhackme.svg" alt="TryHackMe logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>SEC1</h3>
-                    </div>
-                    <span class="timeline-date">May 18, 2026</span>
-                  </div>
-                  <p>Cyber Security 101 with hands-on introduction to core security concepts.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">TryHackMe</span>
-                    <span class="timeline-tag">Fundamentals</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/SEC0.pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/sec0-tryhackme.svg" alt="TryHackMe logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>SEC0</h3>
-                    </div>
-                    <span class="timeline-date">May 12, 2026</span>
-                  </div>
-                  <p>Pre Security foundation path covering networking, Linux, and basics.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">TryHackMe</span>
-                    <span class="timeline-tag">Prep</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/KevinDEVIJLDER-CertifiedAI_MLPentester(C-AI_MLPen).pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/ai-ml-secopsgroup.webp" alt="AI/ML security logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>C-AI/MLPen</h3>
-                    </div>
-                    <span class="timeline-date">February 10, 2026</span>
-                  </div>
-                  <p>Focused on AI/ML security testing, threat modeling, and model risk assessment.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">AI/ML Security</span>
-                    <span class="timeline-tag">Merit</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/KevinDeVijlder-CertifiedAppSecPractitioner(CAP).pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/cap-secoopsgroup.webp" alt="AppSec logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>CAP</h3>
-                    </div>
-                    <span class="timeline-date">February 7, 2025</span>
-                  </div>
-                  <p>Application security practice with emphasis on secure development and review.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">AppSec</span>
-                    <span class="timeline-tag">Practitioner</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/eCPPT.pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/ecppt.png" alt="eCPPT logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>eCPPT</h3>
-                    </div>
-                    <span class="timeline-date">December 9, 2024</span>
-                  </div>
-                  <p>Penetration testing focused on lab-based exploitation, escalation, and reporting.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">INE</span>
-                    <span class="timeline-tag">Red Team</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="/certifications/eWPT.pdf" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/ewpt.png" alt="eWPT logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>eWPT</h3>
-                    </div>
-                    <span class="timeline-date">May 28, 2023</span>
-                  </div>
-                  <p>Web application testing across authentication, authorization, and common flaws.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">INE</span>
-                    <span class="timeline-tag">Web</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry">
-            <a class="timeline-link" href="https://www.credly.com/badges/8f089286-6e23-421f-ada5-6be40ad95f6f" target="_blank">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-logo-wrap">
-                  <img src="/images/logos/sc-900.png" alt="SC-900 logo">
-                </div>
-                <div class="timeline-body">
-                  <div class="timeline-header">
-                    <div class="timeline-title-row">
-                      <h3>SC-900</h3>
-                    </div>
-                    <span class="timeline-date">September 2022</span>
-                  </div>
-                  <p>Security, compliance, and identity fundamentals across Microsoft cloud services.</p>
-                  <div class="timeline-meta">
-                    <span class="timeline-provider">Microsoft</span>
-                    <span class="timeline-tag">Cloud</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="timeline-entry timeline-future">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/cnna.png" alt="Cisco logo">
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>CCNA</h3>
-                  </div>
-                  <span class="timeline-status">Planned</span>
-                </div>
-                <p>Networking fundamentals, routing, switching, and troubleshooting.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">Cisco</span>
-                  <span class="timeline-tag">Networking</span>
-                </div>
-              </div>
+
+          <article class="project-card">
+            <span class="bento-label">Web Application</span>
+            <h3>MediaLedger</h3>
+            <p class="project-body">
+              A clean cataloging and collection management application built to organize, search, and track physical and digital media libraries.
+            </p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>HTML5 &amp; CSS3</span>
+            </div>
+            <div class="project-footer">
+              <a class="link-arrow" href="https://github.com/KevinDeVijlder/MediaLedger" target="_blank" rel="noreferrer">
+                View on GitHub →
+              </a>
             </div>
           </article>
-          <article class="timeline-entry timeline-future">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/iso27001.png" alt="ISO 27001 logo">
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>ISO 27001</h3>
-                  </div>
-                  <span class="timeline-status">Planned</span>
-                </div>
-                <p>Information security management and governance roadmap.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">ISO</span>
-                  <span class="timeline-tag">Governance</span>
-                </div>
-              </div>
+
+          <article class="project-card">
+            <span class="bento-label">Technical Writing</span>
+            <h3>Security Write-Ups &amp; Blog</h3>
+            <p class="project-body">
+              In-depth articles, certification guides (eWPT, eCPPT, CAP), and practical penetration testing walkthroughs for TryHackMe and CTF challenges.
+            </p>
+            <div class="project-tags">
+              <span>Penetration Testing</span>
+              <span>TryHackMe</span>
+              <span>Medium</span>
             </div>
-          </article>
-          <article class="timeline-entry timeline-future">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/cism.png" alt="CISM logo">
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>CISM</h3>
-                  </div>
-                  <span class="timeline-status">Planned</span>
-                </div>
-                <p>Security leadership, risk management, and governance focus.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">ISACA</span>
-                  <span class="timeline-tag">Leadership</span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-entry timeline-future">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/oscp.png" alt="OSCP logo">
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>OSCP</h3>
-                  </div>
-                  <span class="timeline-status">Planned</span>
-                </div>
-                <p>Hands-on offensive security and exploit development path.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">OffSec</span>
-                  <span class="timeline-tag">Offense</span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-entry timeline-future">
-            <span class="timeline-dot"></span>
-            <div class="timeline-content">
-              <div class="timeline-logo-wrap">
-                <img src="/images/logos/cissp.webp" alt="CISSP logo">
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-header">
-                  <div class="timeline-title-row">
-                    <h3>CISSP</h3>
-                  </div>
-                  <span class="timeline-status">Planned</span>
-                </div>
-                <p>Long-term goal focused on security architecture and leadership.</p>
-                <div class="timeline-meta">
-                  <span class="timeline-provider">(ISC)²</span>
-                  <span class="timeline-tag">Leadership</span>
-                </div>
-              </div>
+            <div class="project-footer">
+              <a class="link-arrow" href="https://medium.com/@kevin.de.vijlder" target="_blank" rel="noreferrer">
+                Read articles on Medium →
+              </a>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="contact" class="section container card contact-card">
-        <div class="card-copy">
-          <h2>Contact</h2>
-          <p class="contact-copy">Reach out by email or connect with me on LinkedIn and GitHub.</p>
-          <div class="contact-buttons">
-            <a class="button button-primary" href="mailto:owlysec@protonmail.com">Email</a>
-            <a class="button button-primary" href="https://www.linkedin.com/in/kevindevijlder/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="button button-primary" href="https://github.com/KevinDeVijlder" target="_blank" rel="noreferrer">GitHub</a>
+      <!-- Certifications Section: Interactive Badge Dock + Spotlight Stage -->
+      <section id="timeline" class="section container">
+        <div class="certs-section-header">
+          <div class="section-heading">
+            <p class="eyebrow">Credentials</p>
+            <h2>Certifications</h2>
+          </div>
+          <div class="certs-summary-pills">
+            <span class="summary-pill"><strong>7</strong> Verified</span>
+            <span class="summary-pill summary-pill-active"><span class="status-pulse"></span><strong>1</strong> In Progress</span>
+          </div>
+        </div>
+
+        <!-- Interactive 8-Badge Dock -->
+        <div class="badge-dock" role="tablist" aria-label="Certifications Dock">
+          <button type="button" class="badge-dock-item is-active" role="tab" aria-selected="true" data-cert-index="0">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/sal1-tryhackme.svg" alt="SAL1" />
+              <span class="badge-live-dot" title="In Progress"></span>
+            </div>
+            <span class="badge-dock-name">SAL1</span>
+            <span class="badge-dock-date badge-dock-date-live">Active</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="1">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/sec01-tryhackme.svg" alt="SEC1" />
+            </div>
+            <span class="badge-dock-name">SEC1</span>
+            <span class="badge-dock-date">May ’26</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="2">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/sec0-tryhackme.svg" alt="SEC0" />
+            </div>
+            <span class="badge-dock-name">SEC0</span>
+            <span class="badge-dock-date">May ’26</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="3">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/ai-ml-secopsgroup.webp" alt="C-AI/MLPen" />
+            </div>
+            <span class="badge-dock-name">C-AI/MLPen</span>
+            <span class="badge-dock-date">Feb ’26</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="4">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/cap-secoopsgroup.webp" alt="CAP" />
+            </div>
+            <span class="badge-dock-name">CAP</span>
+            <span class="badge-dock-date">Feb ’25</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="5">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/ecppt.png" alt="eCPPT" />
+            </div>
+            <span class="badge-dock-name">eCPPT</span>
+            <span class="badge-dock-date">Dec ’24</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="6">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/ewpt.png" alt="eWPT" />
+            </div>
+            <span class="badge-dock-name">eWPT</span>
+            <span class="badge-dock-date">May ’23</span>
+          </button>
+
+          <button type="button" class="badge-dock-item" role="tab" aria-selected="false" data-cert-index="7">
+            <div class="badge-dock-icon">
+              <img src="/images/logos/sc-900.png" alt="SC-900" />
+            </div>
+            <span class="badge-dock-name">SC-900</span>
+            <span class="badge-dock-date">Sep ’22</span>
+          </button>
+        </div>
+
+        <!-- Single Sleek Spotlight Stage -->
+        <div class="cert-spotlight" id="cert-spotlight" role="tabpanel" aria-live="polite">
+          <div class="spotlight-visual">
+            <div class="spotlight-pedestal">
+              <img id="spotlight-img" src="/images/logos/sal1-tryhackme.svg" alt="SAL1 Badge" />
+            </div>
+            <div class="spotlight-nav">
+              <button type="button" class="spotlight-nav-btn" id="cert-prev" aria-label="Previous certification">←</button>
+              <span class="spotlight-counter" id="spotlight-counter">01 / 08</span>
+              <button type="button" class="spotlight-nav-btn" id="cert-next" aria-label="Next certification">→</button>
+            </div>
+          </div>
+
+          <div class="spotlight-body">
+            <div class="spotlight-meta">
+              <span class="spotlight-status is-live" id="spotlight-status">
+                <span class="status-pulse"></span>
+                <span id="spotlight-status-text">Currently Pursuing</span>
+              </span>
+              <span class="spotlight-issuer" id="spotlight-issuer">TryHackMe</span>
+              <span class="spotlight-domain" id="spotlight-domain">SOC &amp; Blue Team</span>
+            </div>
+
+            <div class="spotlight-heading">
+              <span class="spotlight-code" id="spotlight-code">SAL1</span>
+              <h3 id="spotlight-title">Security Analyst Level 1</h3>
+            </div>
+
+            <p class="spotlight-desc" id="spotlight-desc">
+              Hands-on Security Operations Center (SOC) certification validating real-world alert triage, SIEM log investigation, network traffic analysis, and end-to-end incident response.
+            </p>
+
+            <div class="spotlight-skills" id="spotlight-skills">
+              <span>SOC Alert Triage</span>
+              <span>SIEM &amp; Log Analysis</span>
+              <span>Incident Response</span>
+              <span>Threat Detection</span>
+            </div>
+
+            <div class="spotlight-footer">
+              <div id="spotlight-action-wrap">
+                <span class="spotlight-active-note">
+                  <span class="status-pulse"></span>
+                  Exam preparation &amp; hands-on SOC simulator labs in progress
+                </span>
+              </div>
+              <span class="spotlight-hint">Hover or click any badge above to switch</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section container">
+        <div class="contact-card">
+          <div class="contact-content">
+            <p class="eyebrow">Get in touch</p>
+            <h2>Let’s connect.</h2>
+            <p class="contact-copy">
+              Reach out directly via email or connect with me on LinkedIn and GitHub.
+            </p>
+            <div class="contact-buttons">
+              <a class="button button-primary" href="mailto:owlysec@protonmail.com">Email Me</a>
+              <a class="button button-secondary" href="https://www.linkedin.com/in/kevindevijlder/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="button button-secondary" href="https://github.com/KevinDeVijlder" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </div>
         </div>
       </section>
@@ -412,8 +376,8 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div>
-          <p class="footer-name">Kevin De Vijlder (© <span id="year"></span>)</p>
-          <p class="footer-note">Owly • cyber security professional</p>
+          <p class="footer-name">Kevin De Vijlder © <span id="year"></span></p>
+          <p class="footer-note">Owly • Cybersecurity Specialist</p>
         </div>
         <div class="footer-links">
           <a href="https://github.com/KevinDeVijlder">GitHub</a>
@@ -426,6 +390,186 @@
     </footer>
 
     <script src="/js/theme-toggle.js" defer></script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const CERTS = [
+        {
+          code: 'SAL1',
+          title: 'Security Analyst Level 1',
+          issuer: 'TryHackMe',
+          domain: 'SOC & Blue Team',
+          status: 'Currently Pursuing',
+          isLive: true,
+          img: '/images/logos/sal1-tryhackme.svg',
+          desc: 'Hands-on Security Operations Center (SOC) certification validating real-world alert triage, SIEM log investigation, network traffic analysis, and end-to-end incident response.',
+          skills: ['SOC Alert Triage', 'SIEM & Log Analysis', 'Incident Response', 'Threat Detection'],
+          link: null,
+          linkLabel: null
+        },
+        {
+          code: 'SEC1',
+          title: 'Cyber Security 101',
+          issuer: 'TryHackMe',
+          domain: 'Offensive & Defensive',
+          status: 'Verified • May 2026',
+          isLive: false,
+          img: '/images/logos/sec01-tryhackme.svg',
+          desc: 'Comprehensive offensive and defensive security certification covering practical exploitation, cryptography, active reconnaissance, and defensive incident workflows.',
+          skills: ['Offensive Security', 'Defensive Operations', 'Web & Network Basics', 'Cryptography'],
+          link: '/certifications/SEC1.pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'SEC0',
+          title: 'Pre-Security Foundation',
+          issuer: 'TryHackMe',
+          domain: 'Security Foundations',
+          status: 'Verified • May 2026',
+          isLive: false,
+          img: '/images/logos/sec0-tryhackme.svg',
+          desc: 'Core technical foundation across computer networking, Linux and Windows internals, web application architecture, and fundamental cybersecurity principles.',
+          skills: ['Network Architecture', 'Linux Internals', 'Windows Administration', 'Web Protocols'],
+          link: '/certifications/SEC0.pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'C-AI/MLPen',
+          title: 'Certified AI/ML Pentester',
+          issuer: 'The SecOps Group',
+          domain: 'AI Security • Passed with Merit',
+          status: 'Verified • Feb 2026',
+          isLive: false,
+          img: '/images/logos/ai-ml-secopsgroup.webp',
+          desc: 'Specialized certification (passed with Merit) focused on adversarial machine learning threat modeling, prompt injection, LLM exploitation, and securing AI pipelines.',
+          skills: ['LLM Exploitation', 'Prompt Injection', 'Adversarial ML', 'AI Model Risk Assessment'],
+          link: '/certifications/KevinDEVIJLDER-CertifiedAI_MLPentester(C-AI_MLPen).pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'CAP',
+          title: 'Certified AppSec Practitioner',
+          issuer: 'The SecOps Group',
+          domain: 'Application Security',
+          status: 'Verified • Feb 2025',
+          isLive: false,
+          img: '/images/logos/cap-secoopsgroup.webp',
+          desc: 'Validates practical application security knowledge across the OWASP Top 10, secure software architecture, authentication hardening, and vulnerability remediation.',
+          skills: ['OWASP Top 10', 'Secure SDLC', 'API Security', 'Vulnerability Defense'],
+          link: '/certifications/KevinDeVijlder-CertifiedAppSecPractitioner(CAP).pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'eCPPT',
+          title: 'Certified Professional Penetration Tester',
+          issuer: 'INE Security',
+          domain: 'Network & Red Team',
+          status: 'Verified • Dec 2024',
+          isLive: false,
+          img: '/images/logos/ecppt.png',
+          desc: 'Advanced hands-on penetration testing certification covering multi-host network exploitation, Active Directory compromise, pivoting, privilege escalation, and executive reporting.',
+          skills: ['Active Directory', 'Network Pivoting', 'Privilege Escalation', 'Exploit Development'],
+          link: '/certifications/eCPPT.pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'eWPT',
+          title: 'Web Application Penetration Tester',
+          issuer: 'INE Security',
+          domain: 'Web App Pentesting',
+          status: 'Verified • May 2023',
+          isLive: false,
+          img: '/images/logos/ewpt.png',
+          desc: 'Practical web application penetration testing credential validating manual exploitation of injection flaws, broken authentication, session hijacking, and business logic vulnerabilities.',
+          skills: ['Manual Web Exploitation', 'SQLi & XSS', 'Auth Bypass', 'Session Security'],
+          link: '/certifications/eWPT.pdf',
+          linkLabel: 'View Certificate PDF ↗'
+        },
+        {
+          code: 'SC-900',
+          title: 'Security, Compliance & Identity',
+          issuer: 'Microsoft',
+          domain: 'Cloud & Identity',
+          status: 'Verified • Sep 2022',
+          isLive: false,
+          img: '/images/logos/sc-900.png',
+          desc: 'Foundational cloud security credential covering Zero Trust principles, identity governance with Microsoft Entra ID, Microsoft Defender, and cloud compliance frameworks.',
+          skills: ['Microsoft Entra ID', 'Zero Trust Architecture', 'Cloud Governance', 'Microsoft Defender'],
+          link: 'https://www.credly.com/badges/8f089286-6e23-421f-ada5-6be40ad95f6f',
+          linkLabel: 'Verify Badge on Credly ↗'
+        }
+      ];
+
+      let currentCertIndex = 0;
+      const dockButtons = document.querySelectorAll('.badge-dock-item');
+      const spotlightEl = document.getElementById('cert-spotlight');
+      const imgEl = document.getElementById('spotlight-img');
+      const counterEl = document.getElementById('spotlight-counter');
+      const statusEl = document.getElementById('spotlight-status');
+      const statusTextEl = document.getElementById('spotlight-status-text');
+      const issuerEl = document.getElementById('spotlight-issuer');
+      const domainEl = document.getElementById('spotlight-domain');
+      const codeEl = document.getElementById('spotlight-code');
+      const titleEl = document.getElementById('spotlight-title');
+      const descEl = document.getElementById('spotlight-desc');
+      const skillsEl = document.getElementById('spotlight-skills');
+      const actionWrapEl = document.getElementById('spotlight-action-wrap');
+
+      function selectCert(index) {
+        if (index === currentCertIndex) return;
+        currentCertIndex = (index + CERTS.length) % CERTS.length;
+        const cert = CERTS[currentCertIndex];
+
+        dockButtons.forEach((btn, i) => {
+          const active = i === currentCertIndex;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        spotlightEl.classList.remove('is-switching');
+        void spotlightEl.offsetWidth;
+        spotlightEl.classList.add('is-switching');
+
+        imgEl.src = cert.img;
+        imgEl.alt = `${cert.code} Badge`;
+        counterEl.textContent = `0${currentCertIndex + 1} / 0${CERTS.length}`;
+
+        statusEl.className = cert.isLive ? 'spotlight-status is-live' : 'spotlight-status';
+        statusEl.innerHTML = cert.isLive
+          ? `<span class="status-pulse"></span><span>${cert.status}</span>`
+          : `<span>✓ ${cert.status}</span>`;
+
+        issuerEl.textContent = cert.issuer;
+        domainEl.textContent = cert.domain;
+        codeEl.textContent = cert.code;
+        titleEl.textContent = cert.title;
+        descEl.textContent = cert.desc;
+
+        skillsEl.innerHTML = cert.skills.map((s) => `<span>${s}</span>`).join('');
+
+        if (cert.link) {
+          actionWrapEl.innerHTML = `
+            <a class="button button-primary spotlight-cta" href="${cert.link}" target="_blank" rel="noreferrer">
+              ${cert.linkLabel}
+            </a>
+          `;
+        } else {
+          actionWrapEl.innerHTML = `
+            <span class="spotlight-active-note">
+              <span class="status-pulse"></span>
+              Exam preparation &amp; hands-on SOC simulator labs in progress
+            </span>
+          `;
+        }
+      }
+
+      dockButtons.forEach((btn, index) => {
+        btn.addEventListener('mouseenter', () => selectCert(index));
+        btn.addEventListener('click', () => selectCert(index));
+      });
+
+      document.getElementById('cert-prev').addEventListener('click', () => selectCert(currentCertIndex - 1));
+      document.getElementById('cert-next').addEventListener('click', () => selectCert(currentCertIndex + 1));
+    </script>
   </body>
 </html>
