@@ -6,42 +6,49 @@
   --blue-soft: rgba(0, 111, 255, 0.12);
   --blue-border: rgba(0, 111, 255, 0.34);
 
-  /* Apple Pro Dark Neutral Palette */
-  --bg: #0a0a0c;
-  --bg-glow: radial-gradient(ellipse 75% 42% at 50% -8%, rgba(0, 111, 255, 0.15), transparent 70%);
-  --surface: #121316;
-  --surface-elevated: #18191d;
-  --surface-hover: #1c1e24;
-  --header-bg: rgba(10, 10, 12, 0.76);
-  --modal-bg: rgba(0, 0, 0, 0.82);
+  /* Apple Pro Dark Palette — Rich Obsidian with Subtle #006FFF Ambient Blooms */
+  --bg: #0b0e15;
+  --bg-glow:
+    radial-gradient(ellipse 82% 30% at 50% -4%, rgba(0, 111, 255, 0.22), transparent 68%),
+    radial-gradient(circle 720px at 88% 32%, rgba(0, 111, 255, 0.10), transparent 70%),
+    radial-gradient(circle 680px at 10% 66%, rgba(0, 111, 255, 0.11), transparent 70%),
+    radial-gradient(ellipse 68% 26% at 50% 98%, rgba(0, 111, 255, 0.12), transparent 72%);
+  --surface: #121722;
+  --surface-elevated: #171e2c;
+  --surface-hover: #1c2436;
+  --header-bg: rgba(11, 14, 21, 0.76);
+  --modal-bg: rgba(6, 8, 14, 0.84);
 
   /* Borders & Shadows */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --border: rgba(140, 180, 255, 0.10);
+  --border-strong: rgba(140, 180, 255, 0.18);
+  --card-shadow: 0 14px 36px rgba(0, 4, 14, 0.36);
 
   /* Typography */
-  --text: #f5f5f7;
-  --muted: #86868b;
+  --text: #f5f7fa;
+  --muted: #8e96a8;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
 }
 
-/* Light Mode — Apple Daylight Palette */
+/* Light Mode — Apple Daylight Palette with Soft Blue Atmosphere */
 html.light {
-  --bg: #f5f5f7;
-  --bg-glow: radial-gradient(ellipse 75% 42% at 50% -8%, rgba(0, 111, 255, 0.07), transparent 70%);
+  --bg: #f3f6fb;
+  --bg-glow:
+    radial-gradient(ellipse 80% 30% at 50% -4%, rgba(0, 111, 255, 0.10), transparent 68%),
+    radial-gradient(circle 680px at 88% 34%, rgba(0, 111, 255, 0.05), transparent 70%),
+    radial-gradient(circle 640px at 12% 68%, rgba(0, 111, 255, 0.06), transparent 70%);
   --surface: #ffffff;
-  --surface-elevated: #f5f5f7;
+  --surface-elevated: #eef3fb;
   --surface-hover: #ffffff;
-  --header-bg: rgba(255, 255, 255, 0.80);
+  --header-bg: rgba(243, 246, 251, 0.80);
   --modal-bg: rgba(29, 29, 31, 0.65);
 
-  --border: rgba(0, 0, 0, 0.07);
-  --border-strong: rgba(0, 0, 0, 0.12);
-  --card-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 55, 140, 0.09);
+  --border-strong: rgba(0, 55, 140, 0.15);
+  --card-shadow: 0 10px 30px rgba(0, 45, 120, 0.05);
 
   --text: #1d1d1f;
-  --muted: #6e6e73;
+  --muted: #646b78;
   --blue-light: #006FFF;
   --blue-soft: rgba(0, 111, 255, 0.09);
   --blue-border: rgba(0, 111, 255, 0.28);
